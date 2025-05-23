@@ -4,13 +4,11 @@ lang: en
 title: Frequently Asked Questions
 ---
 
-## Frequently Asked Questions
-
 <div class="faq-container">
   <div class="faq-item">
     <div class="faq-question">What is the exact location of the property?</div>
     <div class="faq-answer">
-      The property is located in the [specific area] of Ardèche, France. For privacy and security reasons, we provide the exact address only to serious potential buyers after initial contact.
+      The property is located in the [specific area] of Saint Laurent du Pape, Ardèche, France. For privacy and security reasons, we provide the exact address only to serious potential buyers after initial contact.
     </div>
   </div>
   

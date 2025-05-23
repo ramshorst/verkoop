@@ -4,8 +4,6 @@ lang: en
 title: Property Plans
 ---
 
-## Floor Plans and Property Layout
-
 Below you'll find detailed floor plans of the main building and guest accommodations, as well as a site plan showing the entire property.
 
 ### Main Building - Ground Floor

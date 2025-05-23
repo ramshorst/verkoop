@@ -65,8 +65,9 @@
               <span></span>
             </button>
             
+            {% capture homepage_url %}/{{ page.lang }}/{% endcapture %}
             <ul class="nav-list" id="nav-menu">
-              <li class="nav-item {% if page.url contains page.lang and page.url.size == page.lang.size %}active{% endif %}">
+              <li class="nav-item {% if page.url == homepage_url %}active{% endif %}">
                 <a href="{{ site.baseurl }}/{{ page.lang }}/" class="nav-link">
                   {% if page.lang == 'en' %}Home
                   {% elsif page.lang == 'fr' %}Accueil
@@ -122,13 +123,15 @@
     </div>
   </header>
 
-  <!-- Featured images section - always visible -->
+  <!-- Featured images section - only visible on home page -->
+  {% capture homepage_url %}/{{ page.lang }}/{% endcapture %}
+  {% if page.url == homepage_url %}
   <section class="featured-section">
     <div class="container">
       <div class="featured-content">
         <div class="main-image-wrapper animate-fadeIn">
           <img src="{{ site.baseurl }}/assets/images/DD1AC97D4D54A8E5002C109117E93D7D.jpeg" alt="Featured property image" class="main-property-image">
-          <div class="price-badge">{{ site.price | number_with_delimiter }}€</div>
+          <div class="price-badge">{{ site.price }}</div>
         </div>
         
         <div class="thumbnail-grid">
@@ -145,6 +148,7 @@
       </div>
     </div>
   </section>
+  {% endif %}
 
   <!-- Main content -->
   <main class="page-content">
@@ -182,7 +186,7 @@
               <div class="contact-icon">
                 <i class="fas fa-map-marker-alt"></i>
               </div>
-              <span>Ardèche, France</span>
+              <span>Saint Laurent du Pape, Ardèche, France</span>
             </div>
           </div>
         </div>

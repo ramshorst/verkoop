@@ -282,7 +282,7 @@ img {
 
 /* Featured section */
 .featured-section {
-  padding: var(--space-lg) 0;
+  padding: var(--space-md) 0;
   background-color: var(--background-alt);
 }
 
@@ -303,6 +303,7 @@ img {
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
+  max-height: 480px;
   object-fit: cover;
   display: block;
   cursor: pointer;
@@ -340,6 +341,7 @@ img {
   cursor: pointer;
   box-shadow: var(--shadow-sm);
   transition: box-shadow 0.3s ease;
+  max-height: 150px;
 }
 
 .thumbnail:hover {
