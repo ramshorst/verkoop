@@ -78,6 +78,12 @@ h1 {
   width: 100%;
   height: auto;
   border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.main-image img:hover {
+  transform: scale(1.02);
 }
 
 .thumbnail-images {

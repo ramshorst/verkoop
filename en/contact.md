@@ -9,10 +9,10 @@ title: Contact Us
 If you're interested in this property or have any questions, please don't hesitate to contact us.
 
 ### Phone
-📞 **Phone**: 0033 (0)7 56 90 03 05
+📞 **Phone**: +33 (0)7 56 90 03 05
 
 ### Email
-✉️ **Email**: youremail@example.com
+✉️ **Email**: domainedelamiral@icloud.com
 
 ### Request More Information
 

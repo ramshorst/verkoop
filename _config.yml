@@ -1,4 +1,8 @@
-title: Domaine & B&B in the Ardèche for sale
+title:
+  en: "Domaine & B&B in the Ardèche for sale"
+  fr: "Domaine & Chambres d'hôtes en Ardèche à vendre"
+  de: "Domaine & B&B in der Ardèche zu verkaufen"
+  it: "Domaine & B&B nell'Ardèche in vendita"
 description: Beautiful property for sale in the Ardèche region of France
 baseurl: ""
 url: ""
@@ -6,4 +10,4 @@ markdown: kramdown
 languages: ["en", "fr", "de", "it"]
 default_lang: "en"
 exclude: ["README.md", "Gemfile", "Gemfile.lock"]
-price: 750000
+price: 875 000 €
