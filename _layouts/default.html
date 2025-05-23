@@ -44,57 +44,260 @@
     gtag('config', 'GOOGLE-ANALYTICS-ID');
   </script>
   
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
+  <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.ico" type="image/x-icon">
 </head>
 <body data-baseurl="{{ site.baseurl }}">
-  <header>
-    <div class="language-selector">
-      {% for lang in site.languages %}
-        {% if lang == page.lang %}
-          <span class="active">{{ lang }}</span>
-        {% else %}
-          <a href="{{ site.baseurl }}/{{ lang }}/">{{ lang }}</a>
-        {% endif %}
-      {% endfor %}
-    </div>
-    
-    <h1>{{ site.title[page.lang] }}</h1>
-    <div class="price">{{ site.price | number_with_delimiter }}€</div>
-    
-    <div class="featured-images">
-      <div class="main-image">
-        <img src="{{ site.baseurl }}/assets/images/DD1AC97D4D54A8E5002C109117E93D7D.jpeg" alt="Featured property image">
-      </div>
-      <div class="thumbnail-images">
-        <img src="{{ site.baseurl }}/assets/images/Daan-24.jpeg" alt="Property thumbnail 1">
-        <img src="{{ site.baseurl }}/assets/images/Daan-16.jpeg" alt="Property thumbnail 2">
-        <img src="{{ site.baseurl }}/assets/images/Daan-21.jpeg" alt="Property thumbnail 3">
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-top">
+        <h1 class="header-title">{{ site.title[page.lang] }}</h1>
+        
+        <div class="top-navigation">
+          <nav class="main-nav">
+            <button class="hamburger" id="nav-toggle" aria-label="Toggle navigation">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            
+            <ul class="nav-list" id="nav-menu">
+              <li class="nav-item {% if page.url contains page.lang and page.url.size == page.lang.size %}active{% endif %}">
+                <a href="{{ site.baseurl }}/{{ page.lang }}/" class="nav-link">
+                  {% if page.lang == 'en' %}Home
+                  {% elsif page.lang == 'fr' %}Accueil
+                  {% elsif page.lang == 'de' %}Startseite
+                  {% elsif page.lang == 'it' %}Home
+                  {% endif %}
+                </a>
+              </li>
+              <li class="nav-item {% if page.url contains 'gallery' %}active{% endif %}">
+                <a href="{{ site.baseurl }}/{{ page.lang }}/gallery/" class="nav-link">
+                  {% if page.lang == 'en' %}Gallery
+                  {% elsif page.lang == 'fr' %}Galerie
+                  {% elsif page.lang == 'de' %}Galerie
+                  {% elsif page.lang == 'it' %}Galleria
+                  {% endif %}
+                </a>
+              </li>
+              <li class="nav-item {% if page.url contains 'plans' %}active{% endif %}">
+                <a href="{{ site.baseurl }}/{{ page.lang }}/plans/" class="nav-link">
+                  {% if page.lang == 'en' %}Plans
+                  {% elsif page.lang == 'fr' %}Plans
+                  {% elsif page.lang == 'de' %}Pläne
+                  {% elsif page.lang == 'it' %}Planimetrie
+                  {% endif %}
+                </a>
+              </li>
+              <li class="nav-item {% if page.url contains 'faq' %}active{% endif %}">
+                <a href="{{ site.baseurl }}/{{ page.lang }}/faq/" class="nav-link">FAQ</a>
+              </li>
+              <li class="nav-item {% if page.url contains 'contact' %}active{% endif %}">
+                <a href="{{ site.baseurl }}/{{ page.lang }}/contact/" class="nav-link">
+                  {% if page.lang == 'en' %}Contact
+                  {% elsif page.lang == 'fr' %}Contact
+                  {% elsif page.lang == 'de' %}Kontakt
+                  {% elsif page.lang == 'it' %}Contatto
+                  {% endif %}
+                </a>
+              </li>
+            </ul>
+          </nav>
+          
+          <div class="language-selector">
+            {% for lang in site.languages %}
+              {% if lang == page.lang %}
+                <span class="active">{{ lang | upcase }}</span>
+              {% else %}
+                <a href="{{ site.baseurl }}/{{ lang }}/">{{ lang | upcase }}</a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
       </div>
     </div>
   </header>
 
-  <nav>
-    <ul>
-      <li><a href="{{ site.baseurl }}/{{ page.lang }}/">{% if page.lang == 'en' %}Home{% elsif page.lang == 'fr' %}Accueil{% elsif page.lang == 'de' %}Startseite{% elsif page.lang == 'it' %}Home{% endif %}</a></li>
-      <li><a href="{{ site.baseurl }}/{{ page.lang }}/gallery/">{% if page.lang == 'en' %}Gallery{% elsif page.lang == 'fr' %}Galerie{% elsif page.lang == 'de' %}Galerie{% elsif page.lang == 'it' %}Galleria{% endif %}</a></li>
-      <li><a href="{{ site.baseurl }}/{{ page.lang }}/plans/">{% if page.lang == 'en' %}Plans{% elsif page.lang == 'fr' %}Plans{% elsif page.lang == 'de' %}Pläne{% elsif page.lang == 'it' %}Planimetrie{% endif %}</a></li>
-      <li><a href="{{ site.baseurl }}/{{ page.lang }}/faq/">FAQ</a></li>
-      <li><a href="{{ site.baseurl }}/{{ page.lang }}/contact/">{% if page.lang == 'en' %}Contact{% elsif page.lang == 'fr' %}Contact{% elsif page.lang == 'de' %}Kontakt{% elsif page.lang == 'it' %}Contatto{% endif %}</a></li>
-    </ul>
-  </nav>
+  <!-- Featured images section - always visible -->
+  <section class="featured-section">
+    <div class="container">
+      <div class="featured-content">
+        <div class="main-image-wrapper animate-fadeIn">
+          <img src="{{ site.baseurl }}/assets/images/DD1AC97D4D54A8E5002C109117E93D7D.jpeg" alt="Featured property image" class="main-property-image">
+          <div class="price-badge">{{ site.price | number_with_delimiter }}€</div>
+        </div>
+        
+        <div class="thumbnail-grid">
+          <div class="thumbnail animate-fadeIn delay-100">
+            <img src="{{ site.baseurl }}/assets/images/Daan-24.jpeg" alt="Property thumbnail 1">
+          </div>
+          <div class="thumbnail animate-fadeIn delay-200">
+            <img src="{{ site.baseurl }}/assets/images/Daan-16.jpeg" alt="Property thumbnail 2">
+          </div>
+          <div class="thumbnail animate-fadeIn delay-300">
+            <img src="{{ site.baseurl }}/assets/images/Daan-21.jpeg" alt="Property thumbnail 3">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <main>
-    {{ content }}
+  <!-- Main content -->
+  <main class="page-content">
+    <div class="container">
+      {{ content }}
+    </div>
   </main>
 
-  <footer>
-    <div class="contact-info">
-      <p>{% if page.lang == 'en' %}For more information:{% elsif page.lang == 'fr' %}Pour plus d'informations:{% elsif page.lang == 'de' %}Für weitere Informationen:{% elsif page.lang == 'it' %}Per maggiori informazioni:{% endif %}</p>
-      <p>📞 <a href="tel:+33 (0)7 56 90 03 05">+33 (0)7 56 90 03 05</a></p>
-      <p>✉️ <a href="mailto:domainedelamiral@icloud.com">domainedelamiral@icloud.com</a></p>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>
+            {% if page.lang == 'en' %}Contact Us
+            {% elsif page.lang == 'fr' %}Contactez-nous
+            {% elsif page.lang == 'de' %}Kontakt
+            {% elsif page.lang == 'it' %}Contattaci
+            {% endif %}
+          </h3>
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <a href="tel:+33 (0)7 56 90 03 05">+33 (0)7 56 90 03 05</a>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <a href="mailto:domainedelamiral@icloud.com">domainedelamiral@icloud.com</a>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <span>Ardèche, France</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3>
+            {% if page.lang == 'en' %}Quick Links
+            {% elsif page.lang == 'fr' %}Liens Rapides
+            {% elsif page.lang == 'de' %}Schnelllinks
+            {% elsif page.lang == 'it' %}Link Rapidi
+            {% endif %}
+          </h3>
+          <ul class="footer-links">
+            <li>
+              <a href="{{ site.baseurl }}/{{ page.lang }}/">
+                {% if page.lang == 'en' %}Home
+                {% elsif page.lang == 'fr' %}Accueil
+                {% elsif page.lang == 'de' %}Startseite
+                {% elsif page.lang == 'it' %}Home
+                {% endif %}
+              </a>
+            </li>
+            <li>
+              <a href="{{ site.baseurl }}/{{ page.lang }}/gallery/">
+                {% if page.lang == 'en' %}Gallery
+                {% elsif page.lang == 'fr' %}Galerie
+                {% elsif page.lang == 'de' %}Galerie
+                {% elsif page.lang == 'it' %}Galleria
+                {% endif %}
+              </a>
+            </li>
+            <li>
+              <a href="{{ site.baseurl }}/{{ page.lang }}/plans/">
+                {% if page.lang == 'en' %}Plans
+                {% elsif page.lang == 'fr' %}Plans
+                {% elsif page.lang == 'de' %}Pläne
+                {% elsif page.lang == 'it' %}Planimetrie
+                {% endif %}
+              </a>
+            </li>
+            <li><a href="{{ site.baseurl }}/{{ page.lang }}/faq/">FAQ</a></li>
+            <li>
+              <a href="{{ site.baseurl }}/{{ page.lang }}/contact/">
+                {% if page.lang == 'en' %}Contact
+                {% elsif page.lang == 'fr' %}Contact
+                {% elsif page.lang == 'de' %}Kontakt
+                {% elsif page.lang == 'it' %}Contatto
+                {% endif %}
+              </a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Domaine de l'Amiral</h3>
+          <p>
+            {% if page.lang == 'en' %}
+              Beautiful property for sale in the Ardèche region of France. A perfect blend of business potential and peaceful countryside living.
+            {% elsif page.lang == 'fr' %}
+              Magnifique propriété à vendre dans la région de l'Ardèche en France. Un mélange parfait de potentiel commercial et de vie paisible à la campagne.
+            {% elsif page.lang == 'de' %}
+              Schönes Anwesen zu verkaufen in der Ardèche-Region in Frankreich. Eine perfekte Mischung aus Geschäftspotenzial und friedlichem Landleben.
+            {% elsif page.lang == 'it' %}
+              Bellissima proprietà in vendita nella regione dell'Ardèche in Francia. Un perfetto connubio tra potenziale commerciale e tranquilla vita di campagna.
+            {% endif %}
+          </p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; {% if page.lang == 'en' %}2025. All rights reserved.
+            {% elsif page.lang == 'fr' %}2025. Tous droits réservés.
+            {% elsif page.lang == 'de' %}2025. Alle Rechte vorbehalten.
+            {% elsif page.lang == 'it' %}2025. Tutti i diritti riservati.
+            {% endif %}
+        </p>
+      </div>
     </div>
   </footer>
 
+  <!-- Fullscreen gallery -->
+  <div class="fullscreen-gallery">
+    <div class="fullscreen-image-container">
+      <img src="" alt="Fullscreen image" class="fullscreen-image">
+      <div class="image-counter">1 / 50</div>
+    </div>
+    <div class="close-gallery">&times;</div>
+    <div class="gallery-controls">
+      <button class="prev-image">Previous</button>
+      <button class="next-image">Next</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
   <script src="{{ site.baseurl }}/js/gallery.js"></script>
+  <script>
+    // Mobile navigation toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.getElementById('nav-menu');
+      
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', function() {
+          navMenu.classList.toggle('show');
+          
+          // Change hamburger to X
+          const spans = navToggle.querySelectorAll('span');
+          if (spans.length === 3) {
+            spans[0].style.transform = navMenu.classList.contains('show') ? 'rotate(45deg) translate(5px, 5px)' : '';
+            spans[1].style.opacity = navMenu.classList.contains('show') ? '0' : '1';
+            spans[2].style.transform = navMenu.classList.contains('show') ? 'rotate(-45deg) translate(5px, -5px)' : '';
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>

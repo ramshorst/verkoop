@@ -1,14 +1,15 @@
 ---
 layout: default
 ---
-<div class="page-content">
-  <h2>{{ page.title }}</h2>
+<div class="gallery-section">
+  <h2 class="section-title">{{ page.title }}</h2>
   {{ content }}
   
   <div class="gallery-grid">
     {% for image in site.data.gallery %}
-      <div class="gallery-item">
+      <div class="gallery-item animate-fadeIn" style="animation-delay: {{ forloop.index | times: 0.05 }}s">
         <img src="{{ site.baseurl }}/assets/images/{{ image.file }}" alt="{{ image.caption | default: 'Property image' }}">
+        <div class="gallery-caption">{{ image.caption }}</div>
       </div>
     {% endfor %}
   </div>
