@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.default_lang }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{{ page.description | default: site.description }}">
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/Daan-2.jpeg">
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+  <meta property="og:type" content="website">
+  
+  <!-- Schema.org markup for property listing -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "RealEstateListing",
+    "name": "{{ site.title }}",
+    "description": "{{ site.description }}",
+    "image": "{{ site.url }}{{ site.baseurl }}/assets/images/Daan-2.jpeg",
+    "offers": {
+      "@type": "Offer",
+      "price": "{{ site.price }}",
+      "priceCurrency": "EUR"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "Ardèche",
+      "addressCountry": "France"
+    }
+  }
+  </script>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GOOGLE-ANALYTICS-ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GOOGLE-ANALYTICS-ID');
+  </script>
+  
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
+</head>
+<body>
+  <header>
+    <div class="language-selector">
+      {% for lang in site.languages %}
+        {% if lang == page.lang %}
+          <span class="active">{{ lang }}</span>
+        {% else %}
+          <a href="{{ site.baseurl }}/{{ lang }}/">{{ lang }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+    
+    <h1>{{ site.title }}</h1>
+    <div class="price">{{ site.price | number_with_delimiter }}€</div>
+    
+    <div class="featured-images">
+      <div class="main-image">
+        <img src="{{ site.baseurl }}/assets/images/Daan-2.jpeg" alt="Featured property image">
+      </div>
+      <div class="thumbnail-images">
+        <img src="{{ site.baseurl }}/assets/images/Daan-3.jpeg" alt="Property thumbnail 1">
+        <img src="{{ site.baseurl }}/assets/images/Daan-4.jpeg" alt="Property thumbnail 2">
+        <img src="{{ site.baseurl }}/assets/images/Daan-5.jpeg" alt="Property thumbnail 3">
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="{{ site.baseurl }}/{{ page.lang }}/">{% if page.lang == 'en' %}Home{% elsif page.lang == 'fr' %}Accueil{% elsif page.lang == 'de' %}Startseite{% elsif page.lang == 'it' %}Home{% endif %}</a></li>
+      <li><a href="{{ site.baseurl }}/{{ page.lang }}/gallery/">{% if page.lang == 'en' %}Gallery{% elsif page.lang == 'fr' %}Galerie{% elsif page.lang == 'de' %}Galerie{% elsif page.lang == 'it' %}Galleria{% endif %}</a></li>
+      <li><a href="{{ site.baseurl }}/{{ page.lang }}/plans/">{% if page.lang == 'en' %}Plans{% elsif page.lang == 'fr' %}Plans{% elsif page.lang == 'de' %}Pläne{% elsif page.lang == 'it' %}Planimetrie{% endif %}</a></li>
+      <li><a href="{{ site.baseurl }}/{{ page.lang }}/faq/">FAQ</a></li>
+      <li><a href="{{ site.baseurl }}/{{ page.lang }}/contact/">{% if page.lang == 'en' %}Contact{% elsif page.lang == 'fr' %}Contact{% elsif page.lang == 'de' %}Kontakt{% elsif page.lang == 'it' %}Contatto{% endif %}</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer>
+    <div class="contact-info">
+      <p>{% if page.lang == 'en' %}For more information:{% elsif page.lang == 'fr' %}Pour plus d'informations:{% elsif page.lang == 'de' %}Für weitere Informationen:{% elsif page.lang == 'it' %}Per maggiori informazioni:{% endif %}</p>
+      <p>📞 <a href="tel:+YOURNUMBER">+YOURNUMBER</a></p>
+      <p>✉️ <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+    </div>
+  </footer>
+
+  <script src="{{ site.baseurl }}/js/gallery.js"></script>
+</body>
+</html>

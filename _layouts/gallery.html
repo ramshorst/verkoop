@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<div class="page-content">
+  <h2>{{ page.title }}</h2>
+  {{ content }}
+  
+  <div class="gallery-grid">
+    {% for image in site.data.gallery %}
+      <div class="gallery-item">
+        <img src="{{ site.baseurl }}/assets/images/{{ image.file }}" alt="{{ image.caption | default: 'Property image' }}">
+      </div>
+    {% endfor %}
+  </div>
+</div>
