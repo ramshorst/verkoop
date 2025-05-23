@@ -189,12 +189,13 @@ img {
 .top-navigation {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   margin-top: var(--space-md);
 }
 
 .navigation-container {
-  margin-right: var(--space-lg);
+  flex: 1;
 }
 
 .language-selector {
