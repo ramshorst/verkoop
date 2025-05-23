@@ -5,8 +5,8 @@ title:
   it: "Domaine & B&B nell'Ardèche in vendita"
   nl: "Domaine & B&B in de Ardèche te koop"
 description: Beautiful property for sale in the Ardèche region of France
-baseurl: ""
-url: ""
+baseurl: "/verkoop"
+url: "https://ramshorst.github.io"
 markdown: kramdown
 languages: ["en", "fr", "de", "it", "nl"]
 default_lang: "en"
