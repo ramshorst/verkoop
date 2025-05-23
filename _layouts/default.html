@@ -99,10 +99,10 @@
                   </a>
                 </li>
                 <li class="nav-item {% if page.url contains 'faq' %}active{% endif %}">
-                  <a href="{{ site.baseurl }}/{{ page.lang }}/faq/" class="nav-link">FAQ</a>
+                  <a href="{{ site.baseurl }}/{{ page.lang }}/{% if page.lang == 'en' %}faq{% else %}faq/{% endif %}" class="nav-link">FAQ</a>
                 </li>
                 <li class="nav-item {% if page.url contains 'contact' %}active{% endif %}">
-                  <a href="{{ site.baseurl }}/{{ page.lang }}/contact/" class="nav-link">
+                  <a href="{{ site.baseurl }}/{{ page.lang }}/{% if page.lang == 'en' %}contact{% else %}contact/{% endif %}" class="nav-link">
                     {% if page.lang == 'en' %}Contact
                     {% elsif page.lang == 'fr' %}Contact
                     {% elsif page.lang == 'de' %}Kontakt
@@ -238,9 +238,9 @@
                 {% endif %}
               </a>
             </li>
-            <li><a href="{{ site.baseurl }}/{{ page.lang }}/faq/">FAQ</a></li>
+            <li><a href="{{ site.baseurl }}/{{ page.lang }}/{% if page.lang == 'en' %}faq{% else %}faq/{% endif %}">FAQ</a></li>
             <li>
-              <a href="{{ site.baseurl }}/{{ page.lang }}/contact/">
+              <a href="{{ site.baseurl }}/{{ page.lang }}/{% if page.lang == 'en' %}contact{% else %}contact/{% endif %}">
                 {% if page.lang == 'en' %}Contact
                 {% elsif page.lang == 'fr' %}Contact
                 {% elsif page.lang == 'de' %}Kontakt

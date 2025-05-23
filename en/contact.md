@@ -31,7 +31,7 @@ title: Contact Us
 </style>
 
 <div class="contact-container">
-  <img src="/assets/images/Daan-16.jpeg" alt="Contact Person" class="contact-image">
+  <img src="assets/images/Daan-16.jpeg" alt="Contact Person" class="contact-image">
   
   <div class="contact-content">
     <p>If you're interested in this property or have any questions, please don't hesitate to contact us.</p>
