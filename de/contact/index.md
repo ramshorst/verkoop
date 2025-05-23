@@ -31,7 +31,7 @@ title: Kontaktieren Sie uns
 </style>
 
 <div class="contact-container">
-  <img src="/assets/images/Daan-16.jpeg" alt="Kontaktperson" class="contact-image">
+  <img src="../../../assets/images/Daan-16.jpeg" alt="Kontaktperson" class="contact-image">
   
   <div class="contact-content">
     <p>Wenn Sie an dieser Immobilie interessiert sind oder Fragen haben, zögern Sie bitte nicht, uns zu kontaktieren.</p>

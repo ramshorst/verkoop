@@ -31,7 +31,7 @@ title: Neem contact op
 </style>
 
 <div class="contact-container">
-  <img src="/assets/images/Daan-16.jpeg" alt="Contactpersoon" class="contact-image">
+  <img src="../../../assets/images/Daan-16.jpeg" alt="Contactpersoon" class="contact-image">
   
   <div class="contact-content">
     <p>Als u interesse heeft in dit landgoed of vragen heeft, aarzel dan niet om contact met ons op te nemen.</p>

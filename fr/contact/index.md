@@ -31,7 +31,7 @@ title: Contactez-nous
 </style>
 
 <div class="contact-container">
-  <img src="/assets/images/Daan-16.jpeg" alt="Personne à contacter" class="contact-image">
+  <img src="../../../assets/images/Daan-16.jpeg" alt="Personne à contacter" class="contact-image">
   
   <div class="contact-content">
     <p>Si vous êtes intéressé par cette propriété ou si vous avez des questions, n'hésitez pas à nous contacter.</p>
