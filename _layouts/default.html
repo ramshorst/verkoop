@@ -58,57 +58,63 @@
         <h1 class="header-title">{{ site.title[page.lang] }}</h1>
         
         <div class="top-navigation">
-          <nav class="main-nav">
-            <button class="hamburger" id="nav-toggle" aria-label="Toggle navigation">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-            
-            {% capture homepage_url %}/{{ page.lang }}/{% endcapture %}
-            <ul class="nav-list" id="nav-menu">
-              <li class="nav-item {% if page.url == homepage_url %}active{% endif %}">
-                <a href="{{ site.baseurl }}/{{ page.lang }}/" class="nav-link">
-                  {% if page.lang == 'en' %}Home
-                  {% elsif page.lang == 'fr' %}Accueil
-                  {% elsif page.lang == 'de' %}Startseite
-                  {% elsif page.lang == 'it' %}Home
-                  {% endif %}
-                </a>
-              </li>
-              <li class="nav-item {% if page.url contains 'gallery' %}active{% endif %}">
-                <a href="{{ site.baseurl }}/{{ page.lang }}/gallery/" class="nav-link">
-                  {% if page.lang == 'en' %}Gallery
-                  {% elsif page.lang == 'fr' %}Galerie
-                  {% elsif page.lang == 'de' %}Galerie
-                  {% elsif page.lang == 'it' %}Galleria
-                  {% endif %}
-                </a>
-              </li>
-              <li class="nav-item {% if page.url contains 'plans' %}active{% endif %}">
-                <a href="{{ site.baseurl }}/{{ page.lang }}/plans/" class="nav-link">
-                  {% if page.lang == 'en' %}Plans
-                  {% elsif page.lang == 'fr' %}Plans
-                  {% elsif page.lang == 'de' %}Pläne
-                  {% elsif page.lang == 'it' %}Planimetrie
-                  {% endif %}
-                </a>
-              </li>
-              <li class="nav-item {% if page.url contains 'faq' %}active{% endif %}">
-                <a href="{{ site.baseurl }}/{{ page.lang }}/faq/" class="nav-link">FAQ</a>
-              </li>
-              <li class="nav-item {% if page.url contains 'contact' %}active{% endif %}">
-                <a href="{{ site.baseurl }}/{{ page.lang }}/contact/" class="nav-link">
-                  {% if page.lang == 'en' %}Contact
-                  {% elsif page.lang == 'fr' %}Contact
-                  {% elsif page.lang == 'de' %}Kontakt
-                  {% elsif page.lang == 'it' %}Contatto
-                  {% endif %}
-                </a>
-              </li>
-            </ul>
-          </nav>
-          
+          <div class="navigation-container">
+            <nav class="main-nav">
+              <button class="hamburger" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+              
+              {% capture homepage_url %}/{{ page.lang }}/{% endcapture %}
+              <ul class="nav-list" id="nav-menu">
+                <li class="nav-item {% if page.url == homepage_url %}active{% endif %}">
+                  <a href="{{ site.baseurl }}/{{ page.lang }}/" class="nav-link">
+                    {% if page.lang == 'en' %}Home
+                    {% elsif page.lang == 'fr' %}Accueil
+                    {% elsif page.lang == 'de' %}Startseite
+                    {% elsif page.lang == 'it' %}Home
+                    {% elsif page.lang == 'nl' %}Home
+                    {% endif %}
+                  </a>
+                </li>
+                <li class="nav-item {% if page.url contains 'gallery' %}active{% endif %}">
+                  <a href="{{ site.baseurl }}/{{ page.lang }}/gallery/" class="nav-link">
+                    {% if page.lang == 'en' %}Gallery
+                    {% elsif page.lang == 'fr' %}Galerie
+                    {% elsif page.lang == 'de' %}Galerie
+                    {% elsif page.lang == 'it' %}Galleria
+                    {% elsif page.lang == 'nl' %}Galerij
+                    {% endif %}
+                  </a>
+                </li>
+                <li class="nav-item {% if page.url contains 'plans' %}active{% endif %}">
+                  <a href="{{ site.baseurl }}/{{ page.lang }}/plans/" class="nav-link">
+                    {% if page.lang == 'en' %}Plans
+                    {% elsif page.lang == 'fr' %}Plans
+                    {% elsif page.lang == 'de' %}Pläne
+                    {% elsif page.lang == 'it' %}Planimetrie
+                    {% elsif page.lang == 'nl' %}Plattegronden
+                    {% endif %}
+                  </a>
+                </li>
+                <li class="nav-item {% if page.url contains 'faq' %}active{% endif %}">
+                  <a href="{{ site.baseurl }}/{{ page.lang }}/faq/" class="nav-link">FAQ</a>
+                </li>
+                <li class="nav-item {% if page.url contains 'contact' %}active{% endif %}">
+                  <a href="{{ site.baseurl }}/{{ page.lang }}/contact/" class="nav-link">
+                    {% if page.lang == 'en' %}Contact
+                    {% elsif page.lang == 'fr' %}Contact
+                    {% elsif page.lang == 'de' %}Kontakt
+                    {% elsif page.lang == 'it' %}Contatto
+                    {% elsif page.lang == 'nl' %}Contact
+                    {% endif %}
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
           <div class="language-selector">
             {% for lang in site.languages %}
               {% if lang == page.lang %}
@@ -167,6 +173,7 @@
             {% elsif page.lang == 'fr' %}Contactez-nous
             {% elsif page.lang == 'de' %}Kontakt
             {% elsif page.lang == 'it' %}Contattaci
+            {% elsif page.lang == 'nl' %}Neem contact op
             {% endif %}
           </h3>
           <div class="contact-info">
@@ -174,13 +181,13 @@
               <div class="contact-icon">
                 <i class="fas fa-phone"></i>
               </div>
-              <a href="tel:+33 (0)7 56 90 03 05">+33 (0)7 56 90 03 05</a>
+              <a href="tel:+33 (0)7 56 90 03 05" style="color:white;">+33 (0)7 56 90 03 05</a>
             </div>
             <div class="contact-item">
               <div class="contact-icon">
                 <i class="fas fa-envelope"></i>
               </div>
-              <a href="mailto:domainedelamiral@icloud.com">domainedelamiral@icloud.com</a>
+              <a href="mailto:domainedelamiral@icloud.com" style="color:white;">domainedelamiral@icloud.com</a>
             </div>
             <div class="contact-item">
               <div class="contact-icon">
@@ -197,6 +204,7 @@
             {% elsif page.lang == 'fr' %}Liens Rapides
             {% elsif page.lang == 'de' %}Schnelllinks
             {% elsif page.lang == 'it' %}Link Rapidi
+            {% elsif page.lang == 'nl' %}Snelle Links
             {% endif %}
           </h3>
           <ul class="footer-links">
@@ -206,6 +214,7 @@
                 {% elsif page.lang == 'fr' %}Accueil
                 {% elsif page.lang == 'de' %}Startseite
                 {% elsif page.lang == 'it' %}Home
+                {% elsif page.lang == 'nl' %}Home
                 {% endif %}
               </a>
             </li>
@@ -215,6 +224,7 @@
                 {% elsif page.lang == 'fr' %}Galerie
                 {% elsif page.lang == 'de' %}Galerie
                 {% elsif page.lang == 'it' %}Galleria
+                {% elsif page.lang == 'nl' %}Galerij
                 {% endif %}
               </a>
             </li>
@@ -224,6 +234,7 @@
                 {% elsif page.lang == 'fr' %}Plans
                 {% elsif page.lang == 'de' %}Pläne
                 {% elsif page.lang == 'it' %}Planimetrie
+                {% elsif page.lang == 'nl' %}Plattegronden
                 {% endif %}
               </a>
             </li>
@@ -234,6 +245,7 @@
                 {% elsif page.lang == 'fr' %}Contact
                 {% elsif page.lang == 'de' %}Kontakt
                 {% elsif page.lang == 'it' %}Contatto
+                {% elsif page.lang == 'nl' %}Contact
                 {% endif %}
               </a>
             </li>
@@ -251,6 +263,8 @@
               Schönes Anwesen zu verkaufen in der Ardèche-Region in Frankreich. Eine perfekte Mischung aus Geschäftspotenzial und friedlichem Landleben.
             {% elsif page.lang == 'it' %}
               Bellissima proprietà in vendita nella regione dell'Ardèche in Francia. Un perfetto connubio tra potenziale commerciale e tranquilla vita di campagna.
+            {% elsif page.lang == 'nl' %}
+              Prachtig landgoed te koop in de Ardèche-regio in Frankrijk. Een perfecte combinatie van zakelijk potentieel en rustig leven op het platteland.
             {% endif %}
           </p>
         </div>
@@ -261,6 +275,7 @@
             {% elsif page.lang == 'fr' %}2025. Tous droits réservés.
             {% elsif page.lang == 'de' %}2025. Alle Rechte vorbehalten.
             {% elsif page.lang == 'it' %}2025. Tutti i diritti riservati.
+            {% elsif page.lang == 'nl' %}2025. Alle rechten voorbehouden.
             {% endif %}
         </p>
       </div>

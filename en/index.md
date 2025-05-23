@@ -15,7 +15,7 @@ The house is equipped with contemporary elements such as a home cinema and a she
   
 In and around the house there is good mobile coverage.s The house also has a modern fiber connection and therefore has a fast and stable wifi network.   
   
-**Additional land**  
+**Additional land**
 Possibly, in consultation, more land for sale including space to park more than 25 cars.
 
 **Environment**  
