@@ -276,11 +276,11 @@
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; {% if page.lang == 'en' %}2025. All rights reserved.
-            {% elsif page.lang == 'fr' %}2025. Tous droits réservés.
-            {% elsif page.lang == 'de' %}2025. Alle Rechte vorbehalten.
-            {% elsif page.lang == 'it' %}2025. Tutti i diritti riservati.
-            {% elsif page.lang == 'nl' %}2025. Alle rechten voorbehouden.
+        <p>&copy; {% if page.lang == 'en' %}{{ site.time | date: '%Y' }}. All rights reserved.
+            {% elsif page.lang == 'fr' %}{{ site.time | date: '%Y' }}. Tous droits réservés.
+            {% elsif page.lang == 'de' %}{{ site.time | date: '%Y' }}. Alle Rechte vorbehalten.
+            {% elsif page.lang == 'it' %}{{ site.time | date: '%Y' }}. Tutti i diritti riservati.
+            {% elsif page.lang == 'nl' %}{{ site.time | date: '%Y' }}. Alle rechten voorbehouden.
             {% endif %}
         </p>
       </div>
