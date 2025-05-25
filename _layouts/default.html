@@ -7,12 +7,41 @@
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title[page.lang] }}{% endif %}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
   
-  <!-- Open Graph tags -->
+  <!-- Open Graph and Twitter Card tags -->
   <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title[page.lang] }}{% endif %}">
-  <meta property="og:description" content="{{ page.description | default: site.description }}">
+  {% if page.lang == 'en' %}
+    <meta property="og:description" content="Beautiful property for sale in the Ardèche region of France. A perfect blend of business potential and peaceful countryside living.">
+  {% elsif page.lang == 'fr' %}
+    <meta property="og:description" content="Magnifique propriété à vendre dans la région de l'Ardèche en France. Un mélange parfait de potentiel commercial et de vie paisible à la campagne.">
+  {% elsif page.lang == 'de' %}
+    <meta property="og:description" content="Schönes Anwesen zu verkaufen in der Ardèche-Region in Frankreich. Eine perfekte Mischung aus Geschäftspotenzial und friedlichem Landleben.">
+  {% elsif page.lang == 'it' %}
+    <meta property="og:description" content="Bellissima proprietà in vendita nella regione dell'Ardèche in Francia. Un perfetto connubio tra potenziale commerciale e tranquilla vita di campagna.">
+  {% elsif page.lang == 'nl' %}
+    <meta property="og:description" content="Prachtig landgoed te koop in de Ardèche-regio in Frankrijk. Een perfecte combinatie van zakelijk potentieel en rustig leven op het platteland.">
+  {% endif %}
   <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/DD1AC97D4D54A8E5002C109117E93D7D.jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="{{ page.lang }}">
+  
+  <!-- Twitter Card tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title[page.lang] }}{% endif %}">
+  {% if page.lang == 'en' %}
+    <meta name="twitter:description" content="Beautiful property for sale in the Ardèche region of France. A perfect blend of business potential and peaceful countryside living.">
+  {% elsif page.lang == 'fr' %}
+    <meta name="twitter:description" content="Magnifique propriété à vendre dans la région de l'Ardèche en France. Un mélange parfait de potentiel commercial et de vie paisible à la campagne.">
+  {% elsif page.lang == 'de' %}
+    <meta name="twitter:description" content="Schönes Anwesen zu verkaufen in der Ardèche-Region in Frankreich. Eine perfekte Mischung aus Geschäftspotenzial und friedlichem Landleben.">
+  {% elsif page.lang == 'it' %}
+    <meta name="twitter:description" content="Bellissima proprietà in vendita nella regione dell'Ardèche in Francia. Un perfetto connubio tra potenziale commerciale e tranquilla vita di campagna.">
+  {% elsif page.lang == 'nl' %}
+    <meta name="twitter:description" content="Prachtig landgoed te koop in de Ardèche-regio in Frankrijk. Een perfecte combinatie van zakelijk potentieel en rustig leven op het platteland.">
+  {% endif %}
+  <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/DD1AC97D4D54A8E5002C109117E93D7D.jpeg">
   
   <!-- Schema.org markup for property listing -->
   <script type="application/ld+json">
