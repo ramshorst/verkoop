@@ -51,16 +51,58 @@
     "name": "{{ site.title[page.lang] }}",
     "description": "{{ site.description }}",
     "image": "{{ site.url }}{{ site.baseurl }}/assets/images/DD1AC97D4D54A8E5002C109117E93D7D.jpeg",
+    "url": "{{ site.url }}{{ site.baseurl }}/{{ page.lang }}/",
+    "datePosted": "2023-11-05",
     "offers": {
       "@type": "Offer",
       "price": "{{ site.price }}",
-      "priceCurrency": "EUR"
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2023-11-05"
     },
     "address": {
       "@type": "PostalAddress",
+      "addressLocality": "Saint Laurent du Pape",
       "addressRegion": "Ardèche",
       "addressCountry": "France"
-    }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ site.url }}{{ site.baseurl }}/{{ page.lang }}/"
+    },
+    "broker": {
+      "@type": "RealEstateAgent",
+      "name": "Domaine de l'Amiral",
+      "email": "domainedelamiral@icloud.com",
+      "telephone": "+33 (0)7 56 90 03 05"
+    },
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "name": "propertyType",
+        "value": "B&B / Chambres d'hôtes"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "floorSize",
+        "value": "675 m²"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "landSize",
+        "value": "7000 m²"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "numberOfBedrooms",
+        "value": "12"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "numberOfBathrooms",
+        "value": "5"
+      }
+    ]
   }
   </script>
   
