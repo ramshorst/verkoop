@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {% for lang in site.languages %}
+    <url>
+      <loc>{{ site.url }}{{ site.baseurl }}/{% if lang != site.default_lang %}{{ lang }}/{% endif %}</loc>
+      {% for alt_lang in site.languages %}
+      <xhtml:link 
+        rel="alternate" 
+        hreflang="{{ alt_lang }}" 
+        href="{{ site.url }}{{ site.baseurl }}/{% if alt_lang != site.default_lang %}{{ alt_lang }}/{% endif %}" />
+      {% endfor %}
+      <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+    </url>
+    
+    <url>
+      <loc>{{ site.url }}{{ site.baseurl }}/{% if lang != site.default_lang %}{{ lang }}/{% endif %}gallery</loc>
+      {% for alt_lang in site.languages %}
+      <xhtml:link 
+        rel="alternate" 
+        hreflang="{{ alt_lang }}" 
+        href="{{ site.url }}{{ site.baseurl }}/{% if alt_lang != site.default_lang %}{{ alt_lang }}/{% endif %}gallery" />
+      {% endfor %}
+      <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+    
+    <url>
+      <loc>{{ site.url }}{{ site.baseurl }}/{% if lang != site.default_lang %}{{ lang }}/{% endif %}plans</loc>
+      {% for alt_lang in site.languages %}
+      <xhtml:link 
+        rel="alternate" 
+        hreflang="{{ alt_lang }}" 
+        href="{{ site.url }}{{ site.baseurl }}/{% if alt_lang != site.default_lang %}{{ alt_lang }}/{% endif %}plans" />
+      {% endfor %}
+      <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+    
+    <url>
+      <loc>{{ site.url }}{{ site.baseurl }}/{% if lang != site.default_lang %}{{ lang }}/{% endif %}contact</loc>
+      {% for alt_lang in site.languages %}
+      <xhtml:link 
+        rel="alternate" 
+        hreflang="{{ alt_lang }}" 
+        href="{{ site.url }}{{ site.baseurl }}/{% if alt_lang != site.default_lang %}{{ alt_lang }}/{% endif %}contact" />
+      {% endfor %}
+      <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+    
+    <url>
+      <loc>{{ site.url }}{{ site.baseurl }}/{% if lang != site.default_lang %}{{ lang }}/{% endif %}faq</loc>
+      {% for alt_lang in site.languages %}
+      <xhtml:link 
+        rel="alternate" 
+        hreflang="{{ alt_lang }}" 
+        href="{{ site.url }}{{ site.baseurl }}/{% if alt_lang != site.default_lang %}{{ alt_lang }}/{% endif %}faq" />
+      {% endfor %}
+      <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.7</priority>
+    </url>
+  {% endfor %}
+</urlset>
