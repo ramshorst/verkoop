@@ -36,12 +36,12 @@
   </script>
   
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=GOOGLE-ANALYTICS-ID"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNF9LJMTB1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'GOOGLE-ANALYTICS-ID');
+    gtag('config', 'G-VNF9LJMTB1');
   </script>
   
   <!-- Font Awesome -->
@@ -252,21 +252,26 @@
           </ul>
         </div>
         
-        <div class="footer-col">
-          <h3>Domaine de l'Amiral</h3>
-          <p>
-            {% if page.lang == 'en' %}
-              Beautiful property for sale in the Ardèche region of France. A perfect blend of business potential and peaceful countryside living.
-            {% elsif page.lang == 'fr' %}
-              Magnifique propriété à vendre dans la région de l'Ardèche en France. Un mélange parfait de potentiel commercial et de vie paisible à la campagne.
-            {% elsif page.lang == 'de' %}
-              Schönes Anwesen zu verkaufen in der Ardèche-Region in Frankreich. Eine perfekte Mischung aus Geschäftspotenzial und friedlichem Landleben.
-            {% elsif page.lang == 'it' %}
-              Bellissima proprietà in vendita nella regione dell'Ardèche in Francia. Un perfetto connubio tra potenziale commerciale e tranquilla vita di campagna.
-            {% elsif page.lang == 'nl' %}
-              Prachtig landgoed te koop in de Ardèche-regio in Frankrijk. Een perfecte combinatie van zakelijk potentieel en rustig leven op het platteland.
-            {% endif %}
-          </p>
+        <div class="footer-col footer-info-col">
+          <div class="footer-text">
+            <h3>Domaine de l'Amiral</h3>
+            <p>
+              {% if page.lang == 'en' %}
+                Beautiful property for sale in the Ardèche region of France. A perfect blend of business potential and peaceful countryside living.
+              {% elsif page.lang == 'fr' %}
+                Magnifique propriété à vendre dans la région de l'Ardèche en France. Un mélange parfait de potentiel commercial et de vie paisible à la campagne.
+              {% elsif page.lang == 'de' %}
+                Schönes Anwesen zu verkaufen in der Ardèche-Region in Frankreich. Eine perfekte Mischung aus Geschäftspotenzial und friedlichem Landleben.
+              {% elsif page.lang == 'it' %}
+                Bellissima proprietà in vendita nella regione dell'Ardèche in Francia. Un perfetto connubio tra potenziale commerciale e tranquilla vita di campagna.
+              {% elsif page.lang == 'nl' %}
+                Prachtig landgoed te koop in de Ardèche-regio in Frankrijk. Een perfecte combinatie van zakelijk potentieel en rustig leven op het platteland.
+              {% endif %}
+            </p>
+          </div>
+          <div class="footer-illustration">
+            <img src="{{ site.baseurl }}/assets/images/cour-illustration.jpeg" alt="Domaine de l'Amiral illustration" class="circle-image">
+          </div>
         </div>
       </div>
       

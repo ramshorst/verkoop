@@ -787,6 +787,48 @@ img {
   color: var(--gray-400);
 }
 
+/* Footer illustration with circle image */
+.footer-info-col {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.footer-text {
+  flex: 1;
+}
+
+.footer-illustration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--secondary);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease;
+}
+
+.circle-image:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .footer-info-col {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .footer-illustration {
+    margin-top: var(--space-md);
+  }
+}
+
 /* Utility classes */
 .text-center {
   text-align: center;
