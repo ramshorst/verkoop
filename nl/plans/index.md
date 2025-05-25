@@ -7,13 +7,13 @@ title: Plattegronden
 Hieronder vindt u gedetailleerde plattegronden.
 
 ### Hoofdgebouw - Begane Grond
-![Plattegrond Begane Grond](../../assets/images/plans/Domaine de l'Amiral Rdc.jpeg)
+![Gedetailleerde plattegrond van de begane grond van Domaine de l'Amiral met kamerindeling en afmetingen](../../assets/images/plans/Domaine de l'Amiral Rdc.jpeg)
 
 ### Hoofdgebouw - Eerste Verdieping
-![Plattegrond Eerste Verdieping](../../assets/images/plans/Domaine de l'Amiral 1e.jpeg)
+![Gedetailleerde plattegrond van de eerste verdieping van Domaine de l'Amiral met gastenkamers en badkamers](../../assets/images/plans/Domaine de l'Amiral 1e.jpeg)
 
 ### Hoofdgebouw - Tweede Verdieping
-![Plattegrond Tweede Verdieping](../../assets/images/plans/Domaine de l'Amiral 2e.jpeg)
+![Gedetailleerde plattegrond van de tweede verdieping van Domaine de l'Amiral met suite-indeling en terras](../../assets/images/plans/Domaine de l'Amiral 2e.jpeg)
 
 ### Kelder
-![Plattegrond Kelder](../../assets/images/plans/Domaine de l'Amiral -1.jpeg)
+![Gedetailleerde plattegrond van de kelder van Domaine de l'Amiral met opslag- en nutsruimtes](../../assets/images/plans/Domaine de l'Amiral -1.jpeg)

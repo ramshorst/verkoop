@@ -7,13 +7,13 @@ title: Grundrisse der Immobilie
 Nachfolgend finden Sie detaillierte Grundrisse.
 
 ### Hauptgebäude - Erdgeschoss
-![Grundriss Hauptgebäude Erdgeschoss](../../assets/images/plans/Domaine de l'Amiral Rdc.jpeg)
+![Detaillierter Grundriss des Erdgeschosses von Domaine de l'Amiral mit Raumaufteilung und Abmessungen](../../assets/images/plans/Domaine de l'Amiral Rdc.jpeg)
 
 ### Hauptgebäude - Erster Stock
-![Grundriss Hauptgebäude Erster Stock](../../assets/images/plans/Domaine de l'Amiral 1e.jpeg)
+![Detaillierter Grundriss des ersten Stocks von Domaine de l'Amiral mit Gästezimmern und Badezimmern](../../assets/images/plans/Domaine de l'Amiral 1e.jpeg)
 
 ### Hauptgebäude - Zweiter Stock
-![Grundriss Hauptgebäude Zweiter Stock](../../assets/images/plans/Domaine de l'Amiral 2e.jpeg)
+![Detaillierter Grundriss des zweiten Stocks von Domaine de l'Amiral mit Suite-Layout und Terrasse](../../assets/images/plans/Domaine de l'Amiral 2e.jpeg)
 
 ### Keller
-![Grundriss Keller](../../assets/images/plans/Domaine de l'Amiral -1.jpeg)
+![Detaillierter Grundriss des Kellergeschosses von Domaine de l'Amiral mit Lager- und Nutzflächen](../../assets/images/plans/Domaine de l'Amiral -1.jpeg)

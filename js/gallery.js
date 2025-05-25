@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let currentIndex = 0;
   let imageSources = [];
   let imageCaptions = [];
+  let imageAlts = [];
   let totalImages = 0;
   
   // Get base URL for AJAX requests
@@ -24,14 +25,17 @@ document.addEventListener('DOMContentLoaded', function() {
       if (galleryItems.length > 0) {
         const sources = [];
         const captions = [];
+        const alts = [];
         
         galleryItems.forEach(item => {
-          sources.push(item.querySelector('img').src);
+          const img = item.querySelector('img');
+          sources.push(img.src);
+          alts.push(img.alt || '');
           const captionEl = item.querySelector('.gallery-caption');
           captions.push(captionEl ? captionEl.textContent : '');
         });
         
-        resolve({ sources, captions });
+        resolve({ sources, captions, alts });
         return;
       }
       
@@ -48,17 +52,18 @@ document.addEventListener('DOMContentLoaded', function() {
           tempDiv.innerHTML = this.responseText;
           document.body.appendChild(tempDiv);
           
-          // Extract all gallery images and captions
+          // Extract all gallery images, alts, and captions
           const images = tempDiv.querySelectorAll('.gallery-item img');
           const captions = tempDiv.querySelectorAll('.gallery-caption');
           
           const sources = Array.from(images).map(img => img.src);
+          const altTexts = Array.from(images).map(img => img.alt || '');
           const captionTexts = Array.from(captions).map(caption => caption.textContent);
           
           // Clean up
           document.body.removeChild(tempDiv);
           
-          resolve({ sources, captions: captionTexts });
+          resolve({ sources, captions: captionTexts, alts: altTexts });
         } else {
           reject(new Error('Failed to load gallery images'));
         }
@@ -74,9 +79,10 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Initialize gallery functionality
   function initGallery() {
-    fetchGalleryImages().then(({ sources, captions }) => {
+    fetchGalleryImages().then(({ sources, captions, alts }) => {
       imageSources = sources;
       imageCaptions = captions;
+      imageAlts = alts;
       totalImages = imageSources.length;
       
       // Add click events to hero image and thumbnails on homepage
@@ -137,6 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Update gallery image and counter
   function updateGalleryImage() {
     fullscreenImage.src = imageSources[currentIndex];
+    fullscreenImage.alt = imageAlts[currentIndex] || imageCaptions[currentIndex] || `Property image ${currentIndex + 1}`;
     imageCounter.textContent = `${currentIndex + 1} / ${totalImages}`;
   }
   
