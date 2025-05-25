@@ -10,5 +10,5 @@ url: "https://ramshorst.github.io"
 markdown: kramdown
 languages: ["en", "fr", "de", "it", "nl"]
 default_lang: "en"
-exclude: ["README.md", "Gemfile", "Gemfile.lock"]
+exclude: ["README.md", "Gemfile", "Gemfile.lock", "vendor"]
 price: 875 000 €
