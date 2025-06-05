@@ -2,6 +2,7 @@
 layout: page
 lang: en
 title: Domaine & B&B in the Ardèche for sale
+permalink: /
 ---
 
 Domaine de l'Amiral, with an area of 1750m2, including 675m2 of living space, is a large and imposing estate. Sometime in the 19th century, it was used as a silkworm farm. This function determined the building's unique and impressive architecture. The logbook from the 1837 attests to the various activities that have taken place in this house over the centuries.

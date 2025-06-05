@@ -2,6 +2,7 @@
 layout: page
 lang: en
 title: Contact Us
+permalink: /contact/
 ---
 
 <style>

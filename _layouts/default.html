@@ -137,10 +137,18 @@
                 <span></span>
               </button>
               
-              {% capture homepage_url %}/{{ page.lang }}/{% endcapture %}
+              {% if page.lang == site.default_lang %}
+                {% capture homepage_url %}/{% endcapture %}
+              {% else %}
+                {% capture homepage_url %}/{{ page.lang }}/{% endcapture %}
+              {% endif %}
               <ul class="nav-list" id="nav-menu">
                 <li class="nav-item {% if page.url == homepage_url %}active{% endif %}">
-                  <a href="{{ site.baseurl }}/{{ page.lang }}/" class="nav-link">
+                  {% if page.lang == site.default_lang %}
+                    <a href="{{ site.baseurl }}/" class="nav-link">
+                  {% else %}
+                    <a href="{{ site.baseurl }}/{{ page.lang }}/" class="nav-link">
+                  {% endif %}
                     {% if page.lang == 'en' %}Home
                     {% elsif page.lang == 'fr' %}Accueil
                     {% elsif page.lang == 'de' %}Startseite
@@ -150,7 +158,11 @@
                   </a>
                 </li>
                 <li class="nav-item {% if page.url contains 'gallery' %}active{% endif %}">
-                  <a href="{{ site.baseurl }}/{{ page.lang }}/gallery" class="nav-link">
+                  {% if page.lang == site.default_lang %}
+                    <a href="{{ site.baseurl }}/gallery" class="nav-link">
+                  {% else %}
+                    <a href="{{ site.baseurl }}/{{ page.lang }}/gallery" class="nav-link">
+                  {% endif %}
                     {% if page.lang == 'en' %}Gallery
                     {% elsif page.lang == 'fr' %}Galerie
                     {% elsif page.lang == 'de' %}Galerie
@@ -160,7 +172,11 @@
                   </a>
                 </li>
                 <li class="nav-item {% if page.url contains 'plans' %}active{% endif %}">
-                  <a href="{{ site.baseurl }}/{{ page.lang }}/plans" class="nav-link">
+                  {% if page.lang == site.default_lang %}
+                    <a href="{{ site.baseurl }}/plans" class="nav-link">
+                  {% else %}
+                    <a href="{{ site.baseurl }}/{{ page.lang }}/plans" class="nav-link">
+                  {% endif %}
                     {% if page.lang == 'en' %}Plans
                     {% elsif page.lang == 'fr' %}Plans
                     {% elsif page.lang == 'de' %}Pläne
@@ -170,10 +186,18 @@
                   </a>
                 </li>
                 <li class="nav-item {% if page.url contains 'faq' %}active{% endif %}">
-                  <a href="{{ site.baseurl }}/{{ page.lang }}/{% if page.lang == 'en' %}faq{% else %}faq/{% endif %}" class="nav-link">FAQ</a>
+                  {% if page.lang == site.default_lang %}
+                    <a href="{{ site.baseurl }}/faq" class="nav-link">FAQ</a>
+                  {% else %}
+                    <a href="{{ site.baseurl }}/{{ page.lang }}/{% if page.lang == 'en' %}faq{% else %}faq/{% endif %}" class="nav-link">FAQ</a>
+                  {% endif %}
                 </li>
                 <li class="nav-item {% if page.url contains 'contact' %}active{% endif %}">
-                  <a href="{{ site.baseurl }}/{{ page.lang }}/{% if page.lang == 'en' %}contact{% else %}contact/{% endif %}" class="nav-link">
+                  {% if page.lang == site.default_lang %}
+                    <a href="{{ site.baseurl }}/contact" class="nav-link">
+                  {% else %}
+                    <a href="{{ site.baseurl }}/{{ page.lang }}/{% if page.lang == 'en' %}contact{% else %}contact/{% endif %}" class="nav-link">
+                  {% endif %}
                     {% if page.lang == 'en' %}Contact
                     {% elsif page.lang == 'fr' %}Contact
                     {% elsif page.lang == 'de' %}Kontakt
@@ -191,7 +215,11 @@
               {% if lang == page.lang %}
                 <span class="active">{{ lang | upcase }}</span>
               {% else %}
-                <a href="{{ site.baseurl }}/{{ lang }}/">{{ lang | upcase }}</a>
+                {% if lang == site.default_lang %}
+                  <a href="{{ site.baseurl }}/">{{ lang | upcase }}</a>
+                {% else %}
+                  <a href="{{ site.baseurl }}/{{ lang }}/">{{ lang | upcase }}</a>
+                {% endif %}
               {% endif %}
             {% endfor %}
           </div>
@@ -201,7 +229,11 @@
   </header>
 
   <!-- Featured images section - only visible on home page -->
-  {% capture homepage_url %}/{{ page.lang }}/{% endcapture %}
+  {% if page.lang == site.default_lang %}
+    {% capture homepage_url %}/{% endcapture %}
+  {% else %}
+    {% capture homepage_url %}/{{ page.lang }}/{% endcapture %}
+  {% endif %}
   {% if page.url == homepage_url %}
   <section class="featured-section">
     <div class="container">
@@ -280,7 +312,11 @@
           </h3>
           <ul class="footer-links">
             <li>
-              <a href="{{ site.baseurl }}/{{ page.lang }}/">
+              {% if page.lang == site.default_lang %}
+                <a href="{{ site.baseurl }}/">
+              {% else %}
+                <a href="{{ site.baseurl }}/{{ page.lang }}/">
+              {% endif %}
                 {% if page.lang == 'en' %}Home
                 {% elsif page.lang == 'fr' %}Accueil
                 {% elsif page.lang == 'de' %}Startseite
@@ -290,7 +326,11 @@
               </a>
             </li>
             <li>
-              <a href="{{ site.baseurl }}/{{ page.lang }}/gallery">
+              {% if page.lang == site.default_lang %}
+                <a href="{{ site.baseurl }}/gallery">
+              {% else %}
+                <a href="{{ site.baseurl }}/{{ page.lang }}/gallery">
+              {% endif %}
                 {% if page.lang == 'en' %}Gallery
                 {% elsif page.lang == 'fr' %}Galerie
                 {% elsif page.lang == 'de' %}Galerie
@@ -300,7 +340,11 @@
               </a>
             </li>
             <li>
-              <a href="{{ site.baseurl }}/{{ page.lang }}/plans">
+              {% if page.lang == site.default_lang %}
+                <a href="{{ site.baseurl }}/plans">
+              {% else %}
+                <a href="{{ site.baseurl }}/{{ page.lang }}/plans">
+              {% endif %}
                 {% if page.lang == 'en' %}Plans
                 {% elsif page.lang == 'fr' %}Plans
                 {% elsif page.lang == 'de' %}Pläne
@@ -309,9 +353,19 @@
                 {% endif %}
               </a>
             </li>
-            <li><a href="{{ site.baseurl }}/{{ page.lang }}/{% if page.lang == 'en' %}faq{% else %}faq/{% endif %}">FAQ</a></li>
             <li>
-              <a href="{{ site.baseurl }}/{{ page.lang }}/{% if page.lang == 'en' %}contact{% else %}contact/{% endif %}">
+              {% if page.lang == site.default_lang %}
+                <a href="{{ site.baseurl }}/faq">
+              {% else %}
+                <a href="{{ site.baseurl }}/{{ page.lang }}/{% if page.lang == 'en' %}faq{% else %}faq/{% endif %}">
+              {% endif %}FAQ</a>
+            </li>
+            <li>
+              {% if page.lang == site.default_lang %}
+                <a href="{{ site.baseurl }}/contact">
+              {% else %}
+                <a href="{{ site.baseurl }}/{{ page.lang }}/{% if page.lang == 'en' %}contact{% else %}contact/{% endif %}">
+              {% endif %}
                 {% if page.lang == 'en' %}Contact
                 {% elsif page.lang == 'fr' %}Contact
                 {% elsif page.lang == 'de' %}Kontakt

@@ -10,5 +10,6 @@ url: "https://sale.domainedelamiral.com"
 markdown: kramdown
 languages: ["en", "fr", "de", "it", "nl"]
 default_lang: "en"
+exclude_from_localizations: ["images", "css", "js", "fonts", "favicon.ico"]
 exclude: ["README.md", "Gemfile", "Gemfile.lock", "vendor"]
 price: 875 000 €

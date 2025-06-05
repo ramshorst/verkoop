@@ -2,7 +2,6 @@
 layout: page
 lang: en
 title: Property Plans
-permalink: /plans/
 ---
 
 Below you'll find detailed floor plans.
