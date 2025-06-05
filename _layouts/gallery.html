@@ -8,8 +8,8 @@ layout: default
   <div class="gallery-grid">
     {% for image in site.data.gallery %}
       <div class="gallery-item animate-fadeIn" style="animation-delay: {{ forloop.index | times: 0.05 }}s">
-        <img src="{{ site.baseurl }}/assets/images/{{ image.file }}" alt="{{ image.alt | default: image.caption | default: 'Property image' }}">
-        <div class="gallery-caption">{{ image.caption }}</div>
+        <img src="{{ site.baseurl }}/assets/images/{{ image.file }}" alt="{{ image.alt | default: image.caption[page.lang] | default: 'Property image' }}">
+        <div class="gallery-caption">{{ image.caption[page.lang] | default: image.caption }}</div>
       </div>
     {% endfor %}
   </div>
