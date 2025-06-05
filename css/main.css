@@ -1,7 +1,7 @@
 :root {
   /* Modern color palette */
-  --primary: #1e3a8a;         /* Deep blue */
-  --primary-light: #3b82f6;   /* Bright blue */
+  --primary: #0e245a;         /* Deep blue */
+  --primary-light: #5491ff;   /* Bright blue */
   --secondary: #0021B5;       /* New accent color */
   --text-light: #f8fafc;      /* Off-white */
   --text-dark: #0f172a;       /* Almost black */
