@@ -2,7 +2,7 @@
   /* Modern color palette */
   --primary: #1e3a8a;         /* Deep blue */
   --primary-light: #3b82f6;   /* Bright blue */
-  --secondary: #f59e0b;       /* Golden amber */
+  --secondary: #0021B5;       /* New accent color */
   --text-light: #f8fafc;      /* Off-white */
   --text-dark: #0f172a;       /* Almost black */
   --background: #ffffff;      /* White */
@@ -275,7 +275,7 @@ img {
 }
 
 .nav-item:nth-child(5) .nav-link:hover {
-  background-color: #e08a00; /* Darker shade of secondary/amber */
+  background-color: #001c99; /* Darker shade of secondary blue */
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
