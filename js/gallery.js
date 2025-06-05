@@ -13,14 +13,38 @@ document.addEventListener('DOMContentLoaded', function() {
   let imageAlts = [];
   let totalImages = 0;
   
-  // Get base URL for AJAX requests
-  const baseUrl = document.querySelector('base')?.href || 
-                 window.location.origin + (document.querySelector('body').dataset.baseurl || '');
+  // Get base URL for AJAX requests (ensuring no trailing slash)
+  let baseUrl = document.querySelector('base')?.href || 
+               window.location.origin + (document.querySelector('body').dataset.baseurl || '');
+  
+  // Remove trailing slash if present
+  if (baseUrl.endsWith('/')) {
+    baseUrl = baseUrl.slice(0, -1);
+  }
   
   // Function to fetch all gallery images
   function fetchGalleryImages() {
     return new Promise((resolve, reject) => {
-      // If we're already on the gallery page, use the images on this page
+      // First try: use embedded gallery data from script tag
+      const galleryDataScript = document.getElementById('gallery-data');
+      if (galleryDataScript) {
+        try {
+          const galleryData = JSON.parse(galleryDataScript.textContent);
+          if (galleryData && galleryData.images && galleryData.images.length > 0) {
+            const sources = galleryData.images.map(img => img.src);
+            const alts = galleryData.images.map(img => img.alt || '');
+            const captions = galleryData.images.map(img => img.caption || '');
+            
+            resolve({ sources, captions, alts });
+            return;
+          }
+        } catch (e) {
+          console.warn('Error parsing gallery data script:', e);
+          // Continue to next method
+        }
+      }
+      
+      // Second try: if we're already on the gallery page, use the images on this page
       const galleryItems = document.querySelectorAll('.gallery-item');
       if (galleryItems.length > 0) {
         const sources = [];
@@ -39,42 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
       
-      // Otherwise fetch the gallery page via AJAX
-      const xhr = new XMLHttpRequest();
-      const currentLang = document.documentElement.lang || 'en';
-      const galleryPath = currentLang === 'en' ? '/gallery/' : `/${currentLang}/gallery/`;
-      xhr.open('GET', `${baseUrl}${galleryPath}`, true);
-      
-      xhr.onload = function() {
-        if (this.status >= 200 && this.status < 300) {
-          // Create temporary div to parse HTML response
-          const tempDiv = document.createElement('div');
-          tempDiv.style.display = 'none';
-          tempDiv.innerHTML = this.responseText;
-          document.body.appendChild(tempDiv);
-          
-          // Extract all gallery images, alts, and captions
-          const images = tempDiv.querySelectorAll('.gallery-item img');
-          const captions = tempDiv.querySelectorAll('.gallery-caption');
-          
-          const sources = Array.from(images).map(img => img.src);
-          const altTexts = Array.from(images).map(img => img.alt || '');
-          const captionTexts = Array.from(captions).map(caption => caption.textContent);
-          
-          // Clean up
-          document.body.removeChild(tempDiv);
-          
-          resolve({ sources, captions: captionTexts, alts: altTexts });
-        } else {
-          reject(new Error('Failed to load gallery images'));
-        }
-      };
-      
-      xhr.onerror = function() {
-        reject(new Error('Network error'));
-      };
-      
-      xhr.send();
+      // Last resort: no other option worked, use the fallback
+      reject(new Error('No gallery data available'));
     });
   }
   
@@ -82,19 +72,40 @@ document.addEventListener('DOMContentLoaded', function() {
   function initGallery() {
     // Collect all available images on the page as a fallback
     function collectPageImages() {
-      const allImages = document.querySelectorAll('img');
       const sources = [];
       const alts = [];
       const captions = [];
       
-      allImages.forEach(img => {
-        // Skip very small images, icons, etc.
-        if (img.width > 100 && img.height > 100 && !sources.includes(img.src)) {
+      // First, add the featured image if available
+      const mainImage = document.querySelector('.main-property-image');
+      if (mainImage) {
+        sources.push(mainImage.src);
+        alts.push(mainImage.alt || '');
+        captions.push('');
+      }
+      
+      // Add the thumbnail images
+      const thumbnails = document.querySelectorAll('.thumbnail img');
+      thumbnails.forEach(img => {
+        if (!sources.includes(img.src)) {
           sources.push(img.src);
           alts.push(img.alt || '');
           captions.push('');
         }
       });
+      
+      // If we have no images yet, try to get all sizable images from the page
+      if (sources.length === 0) {
+        const allImages = document.querySelectorAll('img');
+        allImages.forEach(img => {
+          // Skip very small images, icons, etc.
+          if (img.naturalWidth > 100 && img.naturalHeight > 100 && !sources.includes(img.src)) {
+            sources.push(img.src);
+            alts.push(img.alt || '');
+            captions.push('');
+          }
+        });
+      }
       
       return { sources, captions, alts };
     }

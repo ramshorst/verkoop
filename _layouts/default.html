@@ -425,6 +425,21 @@
     </div>
   </div>
 
+  <!-- Gallery Data -->
+  <script type="application/json" id="gallery-data">
+    {
+      "images": [
+        {% for image in site.data.gallery %}
+        {
+          "src": "{{ site.baseurl }}/assets/images/{{ image.file }}",
+          "alt": "{{ image.alt | default: image.caption[page.lang] | default: 'Property image' }}",
+          "caption": "{{ image.caption[page.lang] | default: '' }}"
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }
+  </script>
+  
   <!-- Scripts -->
   <script src="{{ site.baseurl }}/js/gallery.js"></script>
   <script>
