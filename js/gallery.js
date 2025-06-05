@@ -42,7 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
       // Otherwise fetch the gallery page via AJAX
       const xhr = new XMLHttpRequest();
       const currentLang = document.documentElement.lang || 'en';
-      xhr.open('GET', `${baseUrl}/${currentLang}/gallery/`, true);
+      const galleryPath = currentLang === 'en' ? '/gallery/' : `/${currentLang}/gallery/`;
+      xhr.open('GET', `${baseUrl}${galleryPath}`, true);
       
       xhr.onload = function() {
         if (this.status >= 200 && this.status < 300) {
@@ -79,12 +80,27 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Initialize gallery functionality
   function initGallery() {
-    fetchGalleryImages().then(({ sources, captions, alts }) => {
-      imageSources = sources;
-      imageCaptions = captions;
-      imageAlts = alts;
-      totalImages = imageSources.length;
+    // Collect all available images on the page as a fallback
+    function collectPageImages() {
+      const allImages = document.querySelectorAll('img');
+      const sources = [];
+      const alts = [];
+      const captions = [];
       
+      allImages.forEach(img => {
+        // Skip very small images, icons, etc.
+        if (img.width > 100 && img.height > 100 && !sources.includes(img.src)) {
+          sources.push(img.src);
+          alts.push(img.alt || '');
+          captions.push('');
+        }
+      });
+      
+      return { sources, captions, alts };
+    }
+    
+    // Setup event listeners for all clickable gallery images
+    function setupImageListeners() {
       // Add click events to home page images
       const mainPropertyImage = document.querySelector('.main-property-image');
       const thumbnails = document.querySelectorAll('.thumbnail img');
@@ -127,8 +143,27 @@ document.addEventListener('DOMContentLoaded', function() {
           });
         });
       }
+    }
+
+    // Try to fetch gallery images, fall back to page images if it fails
+    fetchGalleryImages().then(({ sources, captions, alts }) => {
+      imageSources = sources;
+      imageCaptions = captions;
+      imageAlts = alts;
+      totalImages = imageSources.length;
+      
+      setupImageListeners();
     }).catch(error => {
-      console.error('Error initializing gallery:', error);
+      console.error('Error loading gallery images, using page images as fallback:', error);
+      
+      // Use images from the current page as a fallback
+      const { sources, captions, alts } = collectPageImages();
+      imageSources = sources;
+      imageCaptions = captions;
+      imageAlts = alts;
+      totalImages = imageSources.length;
+      
+      setupImageListeners();
     });
   }
   
