@@ -5,7 +5,7 @@ title:
   it: "Domaine & B&B nell'Ardèche in vendita"
   nl: "Domaine & B&B in de Ardèche te koop"
 description: Beautiful property for sale in the Ardèche region of France
-baseurl: "/verkoop"
+baseurl: ""
 url: "https://sale.domainedelamiral.com"
 markdown: kramdown
 languages: ["en", "fr", "de", "it", "nl"]
