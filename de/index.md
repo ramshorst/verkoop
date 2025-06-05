@@ -1,7 +1,6 @@
 ---
 layout: page
 lang: de
-title: Domaine & B&B in der Ardèche zu verkaufen
 ---
 
 Domaine de l'Amiral, mit einer Fläche von 1750m2, einschließlich 675m2 Wohnfläche, ist ein großes und imposantes Anwesen. Im 19. Jahrhundert wurde es als Seidenraupenfarm genutzt. Diese Funktion bestimmte die einzigartige und beeindruckende Architektur des Gebäudes. Das Logbuch von 1837 bezeugt die verschiedenen Aktivitäten, die in diesem Haus über die Jahrhunderte stattgefunden haben.

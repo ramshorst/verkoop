@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="{{ site.url }}{{ site.baseurl }}/">
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title[page.lang] }}{% endif %}</title>
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.data.translations.site_title[page.lang] }}{% endif %}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
   
   <!-- Open Graph and Twitter Card tags -->
-  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title[page.lang] }}{% endif %}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.data.translations.site_title[page.lang] }}{% endif %}">
   {% if page.lang == 'en' %}
     <meta property="og:description" content="Beautiful property for sale in the Ardèche region of France. A perfect blend of business potential and peaceful countryside living.">
   {% elsif page.lang == 'fr' %}
@@ -29,7 +29,7 @@
   
   <!-- Twitter Card tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title[page.lang] }}{% endif %}">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.data.translations.site_title[page.lang] }}{% endif %}">
   {% if page.lang == 'en' %}
     <meta name="twitter:description" content="Beautiful property for sale in the Ardèche region of France. A perfect blend of business potential and peaceful countryside living.">
   {% elsif page.lang == 'fr' %}
@@ -48,7 +48,7 @@
   {
     "@context": "https://schema.org/",
     "@type": "RealEstateListing",
-    "name": "{{ site.title[page.lang] }}",
+    "name": "{{ site.data.translations.site_title[page.lang] }}",
     "description": "{{ site.description }}",
     "image": "{{ site.url }}{{ site.baseurl }}/assets/images/DD1AC97D4D54A8E5002C109117E93D7D.jpeg",
     "url": "{{ site.url }}{{ site.baseurl }}/{{ page.lang }}/",
@@ -126,7 +126,7 @@
   <header class="site-header">
     <div class="container">
       <div class="header-top">
-        <h1 class="header-title">{{ site.title[page.lang] }}</h1>
+        <h1 class="header-title">{{ site.data.translations.site_title[page.lang] }}</h1>
         
         <div class="top-navigation">
           <div class="navigation-container">

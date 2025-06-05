@@ -1,7 +1,6 @@
 ---
 layout: page
 lang: it
-title: Domaine & B&B nell'Ardèche in vendita
 ---
 
 Domaine de l'Amiral, con una superficie di 1750m2, di cui 675m2 di spazio abitativo, è una tenuta grande e imponente. Nel XIX secolo, è stato utilizzato come allevamento di bachi da seta. Questa funzione ha determinato l'architettura unica e impressionante dell'edificio. Il registro del 1837 attesta le varie attività che si sono svolte in questa casa nel corso dei secoli.

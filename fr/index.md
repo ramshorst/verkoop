@@ -1,7 +1,6 @@
 ---
 layout: page
 lang: fr
-title: Domaine & B&B en Ardèche à vendre
 ---
 
 Domaine de l'Amiral, avec une superficie de 1750m2, dont 675m2 d'espace habitable, est un domaine vaste et imposant. Au XIXe siècle, il a été utilisé comme magnanerie. Cette fonction a déterminé l'architecture unique et impressionnante du bâtiment. Le journal de bord de 1837 atteste des diverses activités qui ont eu lieu dans cette maison au cours des siècles.

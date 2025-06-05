@@ -1,7 +1,6 @@
 ---
 layout: page
 lang: en
-title: Domaine & B&B in the Ardèche for sale
 permalink: /
 ---
 

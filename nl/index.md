@@ -1,7 +1,6 @@
 ---
 layout: page
 lang: nl
-title: Domaine & B&B in de Ardèche te koop
 ---
 
 #### Groot en uniek domein
