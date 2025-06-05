@@ -349,7 +349,7 @@ img {
   top: var(--space-md);
   right: var(--space-md);
   background-color: var(--secondary);
-  color: var(--text-dark);
+  color: var(--text-light);
   font-weight: 700;
   font-size: 1.25rem;
   padding: var(--space-xs) var(--space-md);
@@ -979,6 +979,7 @@ img {
     top: var(--space-sm);
     right: var(--space-sm);
     padding: var(--space-xs) var(--space-sm);
+    color: var(--text-light);
   }
   
   .main-property-image {
