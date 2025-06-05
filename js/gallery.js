@@ -85,23 +85,34 @@ document.addEventListener('DOMContentLoaded', function() {
       imageAlts = alts;
       totalImages = imageSources.length;
       
-      // Add click events to hero image and thumbnails on homepage
-      const heroImage = document.querySelector('.hero-image');
+      // Add click events to home page images
+      const mainPropertyImage = document.querySelector('.main-property-image');
       const thumbnails = document.querySelectorAll('.thumbnail img');
       
-      if (heroImage) {
-        heroImage.style.cursor = 'pointer';
-        heroImage.addEventListener('click', () => {
-          openGallery(heroImage.src);
+      // Main featured image
+      if (mainPropertyImage) {
+        mainPropertyImage.style.cursor = 'pointer';
+        mainPropertyImage.addEventListener('click', () => {
+          openGallery(mainPropertyImage.src);
         });
       }
       
+      // Thumbnail grid on homepage
       if (thumbnails.length > 0) {
         thumbnails.forEach(thumbnail => {
           thumbnail.style.cursor = 'pointer';
           thumbnail.addEventListener('click', () => {
             openGallery(thumbnail.src);
           });
+        });
+      }
+      
+      // Legacy hero image support
+      const heroImage = document.querySelector('.hero-image');
+      if (heroImage) {
+        heroImage.style.cursor = 'pointer';
+        heroImage.addEventListener('click', () => {
+          openGallery(heroImage.src);
         });
       }
       
