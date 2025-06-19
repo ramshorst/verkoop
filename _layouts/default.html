@@ -161,7 +161,7 @@
         <div class="top-navigation">
           <div class="navigation-container">
             <nav class="main-nav">
-              <button class="hamburger" id="nav-toggle" aria-label="Toggle navigation">
+              <button class="hamburger" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -298,7 +298,6 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <div class="container">
       <div class="footer-container">
         <div class="footer-col">
           <h3>
@@ -439,7 +438,6 @@
             {% endif %}
         </p>
       </div>
-    </div>
   </footer>
 
   <!-- Fullscreen gallery -->
@@ -447,6 +445,7 @@
     <div class="fullscreen-image-container">
       <img src="" alt="" class="fullscreen-image">
       <div class="image-counter">1 / 50</div>
+      <div class="fullscreen-caption"></div>
     </div>
     <div class="close-gallery">&times;</div>
     <div class="gallery-controls">
@@ -477,19 +476,59 @@
     document.addEventListener('DOMContentLoaded', function() {
       const navToggle = document.getElementById('nav-toggle');
       const navMenu = document.getElementById('nav-menu');
+      const body = document.body;
       
       if (navToggle && navMenu) {
         navToggle.addEventListener('click', function() {
-          navMenu.classList.toggle('show');
+          const isOpen = navMenu.classList.contains('show');
+          
+          if (isOpen) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+        
+        // Close menu when clicking on nav links
+        const navLinks = navMenu.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', closeMenu);
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && navMenu.classList.contains('show')) {
+            closeMenu();
+          }
+        });
+        
+        function openMenu() {
+          navMenu.classList.add('show');
+          body.style.overflow = 'hidden';
+          navToggle.setAttribute('aria-expanded', 'true');
           
           // Change hamburger to X
           const spans = navToggle.querySelectorAll('span');
           if (spans.length === 3) {
-            spans[0].style.transform = navMenu.classList.contains('show') ? 'rotate(45deg) translate(5px, 5px)' : '';
-            spans[1].style.opacity = navMenu.classList.contains('show') ? '0' : '1';
-            spans[2].style.transform = navMenu.classList.contains('show') ? 'rotate(-45deg) translate(5px, -5px)' : '';
+            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
           }
-        });
+        }
+        
+        function closeMenu() {
+          navMenu.classList.remove('show');
+          body.style.overflow = '';
+          navToggle.setAttribute('aria-expanded', 'false');
+          
+          // Reset hamburger
+          const spans = navToggle.querySelectorAll('span');
+          if (spans.length === 3) {
+            spans[0].style.transform = '';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = '';
+          }
+        }
       }
     });
   </script>

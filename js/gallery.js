@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const fullscreenGallery = document.querySelector('.fullscreen-gallery');
   const fullscreenImage = fullscreenGallery.querySelector('.fullscreen-image');
   const imageCounter = fullscreenGallery.querySelector('.image-counter');
+  const fullscreenCaption = fullscreenGallery.querySelector('.fullscreen-caption');
   const closeGallery = fullscreenGallery.querySelector('.close-gallery');
   const prevButton = fullscreenGallery.querySelector('.prev-image');
   const nextButton = fullscreenGallery.querySelector('.next-image');
@@ -202,6 +203,15 @@ document.addEventListener('DOMContentLoaded', function() {
     fullscreenImage.src = imageSources[currentIndex];
     fullscreenImage.alt = imageAlts[currentIndex] || imageCaptions[currentIndex] || `Property image ${currentIndex + 1}`;
     imageCounter.textContent = `${currentIndex + 1} / ${totalImages}`;
+    
+    // Update caption
+    const currentCaption = imageCaptions[currentIndex];
+    if (currentCaption && currentCaption.trim()) {
+      fullscreenCaption.textContent = currentCaption;
+      fullscreenCaption.classList.add('visible');
+    } else {
+      fullscreenCaption.classList.remove('visible');
+    }
   }
   
   // Gallery navigation
