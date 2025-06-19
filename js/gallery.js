@@ -164,6 +164,9 @@ document.addEventListener('DOMContentLoaded', function() {
       imageAlts = alts;
       totalImages = imageSources.length;
       
+      // Make totalImages available globally for tracking
+      window.totalImages = totalImages;
+      
       setupImageListeners();
     }).catch(error => {
       console.error('Error loading gallery images, using page images as fallback:', error);
@@ -174,6 +177,9 @@ document.addEventListener('DOMContentLoaded', function() {
       imageCaptions = captions;
       imageAlts = alts;
       totalImages = imageSources.length;
+      
+      // Make totalImages available globally for tracking
+      window.totalImages = totalImages;
       
       setupImageListeners();
     });
@@ -187,6 +193,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Update fullscreen image and counter
     updateGalleryImage();
+    
+    // Track gallery open event
+    if (typeof window.trackGalleryInteraction === 'function') {
+      window.trackGalleryInteraction('gallery_open', currentIndex, totalImages);
+    }
+    
+    // Track individual image view
+    if (typeof window.trackGalleryView === 'function') {
+      window.trackGalleryView(currentIndex);
+    }
     
     // Show gallery with animation
     fullscreenGallery.style.display = 'flex';
@@ -218,11 +234,27 @@ document.addEventListener('DOMContentLoaded', function() {
   function nextImage() {
     currentIndex = (currentIndex + 1) % totalImages;
     updateGalleryImage();
+    
+    // Track navigation and image view
+    if (typeof window.trackGalleryInteraction === 'function') {
+      window.trackGalleryInteraction('next_image', currentIndex, totalImages);
+    }
+    if (typeof window.trackGalleryView === 'function') {
+      window.trackGalleryView(currentIndex);
+    }
   }
   
   function prevImage() {
     currentIndex = (currentIndex - 1 + totalImages) % totalImages;
     updateGalleryImage();
+    
+    // Track navigation and image view
+    if (typeof window.trackGalleryInteraction === 'function') {
+      window.trackGalleryInteraction('prev_image', currentIndex, totalImages);
+    }
+    if (typeof window.trackGalleryView === 'function') {
+      window.trackGalleryView(currentIndex);
+    }
   }
   
   // Close gallery

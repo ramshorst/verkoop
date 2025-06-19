@@ -142,7 +142,71 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-VNF9LJMTB1');
+    gtag('config', 'G-VNF9LJMTB1', {
+      custom_map: {'custom_parameter_1': 'user_country'}
+    });
+
+    // Enhanced tracking functions
+    window.trackContact = function(type, details) {
+      gtag('event', 'contact_action', {
+        'event_category': 'engagement',
+        'event_label': type,
+        'contact_method': type,
+        'contact_details': details,
+        'user_country': window.userCountry || 'unknown',
+        'page_location': window.location.href,
+        'page_title': document.title
+      });
+    };
+
+    window.trackGalleryInteraction = function(action, imageIndex, totalImages) {
+      gtag('event', 'gallery_interaction', {
+        'event_category': 'gallery',
+        'event_label': action,
+        'gallery_action': action,
+        'image_index': imageIndex,
+        'total_images': totalImages,
+        'user_country': window.userCountry || 'unknown',
+        'page_location': window.location.href
+      });
+    };
+
+    window.trackPhotoMilestone = function(photosViewed) {
+      gtag('event', 'photo_milestone', {
+        'event_category': 'engagement',
+        'event_label': 'photos_24_plus',
+        'photos_viewed': photosViewed,
+        'user_country': window.userCountry || 'unknown',
+        'milestone': '24_photos',
+        'page_location': window.location.href
+      });
+    };
+
+    // Get user's country via geolocation
+    function getUserCountry() {
+      if ('geolocation' in navigator) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&localityLanguage=en`)
+            .then(response => response.json())
+            .then(data => {
+              window.userCountry = data.countryCode || 'unknown';
+              gtag('config', 'G-VNF9LJMTB1', {
+                'custom_parameter_1': window.userCountry
+              });
+            })
+            .catch(() => {
+              window.userCountry = 'unknown';
+            });
+        }, function() {
+          window.userCountry = 'unknown';
+        });
+      } else {
+        window.userCountry = 'unknown';
+      }
+    }
+
+    // Initialize country detection
+    getUserCountry();
   </script>
   
   <!-- Font Awesome -->
@@ -454,6 +518,52 @@
     </div>
   </div>
 
+  <!-- Engagement Call Popup -->
+  <div class="call-popup" id="callPopup">
+    <div class="popup-content">
+      <button class="popup-close" aria-label="Close popup">&times;</button>
+      <div class="popup-header">
+        <div class="popup-icon">
+          <i class="fas fa-phone"></i>
+        </div>
+        <h3 class="popup-title">
+          {% if page.lang == 'en' %}Interested in this property?
+          {% elsif page.lang == 'fr' %}Intéressé par cette propriété?
+          {% elsif page.lang == 'de' %}Interesse an dieser Immobilie?
+          {% elsif page.lang == 'it' %}Interessato a questa proprietà?
+          {% elsif page.lang == 'nl' %}Geïnteresseerd in dit object?
+          {% endif %}
+        </h3>
+      </div>
+      <div class="popup-body">
+        <p class="popup-message">
+          {% if page.lang == 'en' %}Call us now for more information or to schedule a viewing!
+          {% elsif page.lang == 'fr' %}Appelez-nous maintenant pour plus d'informations ou pour planifier une visite!
+          {% elsif page.lang == 'de' %}Rufen Sie uns jetzt an für weitere Informationen oder um eine Besichtigung zu vereinbaren!
+          {% elsif page.lang == 'it' %}Chiamaci ora per maggiori informazioni o per programmare una visita!
+          {% elsif page.lang == 'nl' %}Bel ons nu voor meer informatie of om een bezichtiging in te plannen!
+          {% endif %}
+        </p>
+        <div class="popup-contact">
+          <a href="tel:+33756900305" class="popup-phone-btn" onclick="trackContact('phone', '+33756900305')">
+            <i class="fas fa-phone"></i>
+            +33 (0)7 56 90 03 05
+          </a>
+          <a href="mailto:domainedelamiral@icloud.com" class="popup-email-btn" onclick="trackContact('email', 'domainedelamiral@icloud.com')">
+            <i class="fas fa-envelope"></i>
+            {% if page.lang == 'en' %}Email Us
+            {% elsif page.lang == 'fr' %}Nous envoyer un email
+            {% elsif page.lang == 'de' %}E-Mail senden
+            {% elsif page.lang == 'it' %}Inviaci un'email
+            {% elsif page.lang == 'nl' %}Email ons
+            {% endif %}
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="popup-overlay"></div>
+  </div>
+
   <!-- Gallery Data -->
   <script type="application/json" id="gallery-data">
     {
@@ -531,6 +641,136 @@
         }
       }
     });
+
+    // Enhanced engagement tracking and popup system
+    (function() {
+      let engagementScore = 0;
+      let pageViewTime = Date.now();
+      let photosViewed = 0;
+      let hasShownPopup = false;
+      let popupDismissed = localStorage.getItem('popup_dismissed') === 'true';
+
+      // Track page engagement
+      function trackEngagement() {
+        const timeOnPage = (Date.now() - pageViewTime) / 1000;
+        
+        // Add engagement points
+        if (timeOnPage > 30) engagementScore += 10; // 30+ seconds on page
+        if (timeOnPage > 60) engagementScore += 15; // 1+ minute on page
+        if (timeOnPage > 120) engagementScore += 25; // 2+ minutes on page
+        
+        // Track scroll depth
+        const scrollPercent = (window.scrollY + window.innerHeight) / document.body.scrollHeight;
+        if (scrollPercent > 0.5) engagementScore += 10; // Scrolled 50%
+        if (scrollPercent > 0.8) engagementScore += 15; // Scrolled 80%
+
+        // Show popup if engagement is high and not dismissed
+        if (engagementScore >= 35 && !hasShownPopup && !popupDismissed) {
+          showCallPopup();
+        }
+      }
+
+      // Show call popup
+      function showCallPopup() {
+        hasShownPopup = true;
+        const popup = document.getElementById('callPopup');
+        if (popup) {
+          popup.classList.add('show');
+          
+          // Track popup shown event
+          gtag('event', 'popup_shown', {
+            'event_category': 'engagement',
+            'event_label': 'call_popup',
+            'engagement_score': engagementScore,
+            'user_country': window.userCountry || 'unknown'
+          });
+        }
+      }
+
+      // Hide popup
+      function hideCallPopup() {
+        const popup = document.getElementById('callPopup');
+        if (popup) {
+          popup.classList.remove('show');
+          localStorage.setItem('popup_dismissed', 'true');
+          
+          // Track popup dismissed event
+          gtag('event', 'popup_dismissed', {
+            'event_category': 'engagement',
+            'event_label': 'call_popup',
+            'user_country': window.userCountry || 'unknown'
+          });
+        }
+      }
+
+      // Initialize popup event listeners
+      function initPopup() {
+        const popup = document.getElementById('callPopup');
+        const closeBtn = popup?.querySelector('.popup-close');
+        const overlay = popup?.querySelector('.popup-overlay');
+
+        if (closeBtn) {
+          closeBtn.addEventListener('click', hideCallPopup);
+        }
+        if (overlay) {
+          overlay.addEventListener('click', hideCallPopup);
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && popup?.classList.contains('show')) {
+            hideCallPopup();
+          }
+        });
+      }
+
+      // Track contact link clicks in footer and other pages
+      function addContactTracking() {
+        // Track all phone links
+        const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+        phoneLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            trackContact('phone', this.href.replace('tel:', ''));
+            engagementScore += 30; // High engagement for contact attempt
+          });
+        });
+
+        // Track all email links
+        const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+        emailLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            trackContact('email', this.href.replace('mailto:', ''));
+            engagementScore += 30; // High engagement for contact attempt
+          });
+        });
+      }
+
+      // Track gallery interactions
+      window.trackGalleryView = function(imageIndex) {
+        photosViewed++;
+        engagementScore += 5; // Add points for each photo viewed
+        
+        // Track individual image view
+        trackGalleryInteraction('image_view', imageIndex, window.totalImages || 0);
+        
+        // Track milestone
+        if (photosViewed >= 24) {
+          trackPhotoMilestone(photosViewed);
+          engagementScore += 20; // Bonus for viewing many photos
+        }
+      };
+
+      // Initialize everything
+      setTimeout(() => {
+        initPopup();
+        addContactTracking();
+        
+        // Start tracking engagement after a short delay
+        setTimeout(trackEngagement, 10000); // Check after 10 seconds
+        setInterval(trackEngagement, 15000); // Check every 15 seconds
+      }, 1000);
+
+    })();
   </script>
 </body>
 </html>
