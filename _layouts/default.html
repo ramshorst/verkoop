@@ -295,6 +295,28 @@
                     {% endif %}
                   </a>
                 </li>
+                <!-- Language selector in mobile menu -->
+                <li class="nav-item mobile-language-selector">
+                  <span class="nav-link language-label">
+                    {% if page.lang == 'en' %}Language
+                    {% elsif page.lang == 'fr' %}Langue
+                    {% elsif page.lang == 'de' %}Sprache
+                    {% elsif page.lang == 'it' %}Lingua
+                    {% elsif page.lang == 'nl' %}Taal
+                    {% endif %}
+                  </span>
+                  <div class="mobile-language-list">
+                    {% for lang in site.languages %}
+                      {% if lang != page.lang %}
+                        {% if lang == site.default_lang %}
+                          <a href="{{ site.baseurl }}/" class="mobile-language-link">{{ lang | upcase }}</a>
+                        {% else %}
+                          <a href="{{ site.baseurl }}/{{ lang }}/" class="mobile-language-link">{{ lang | upcase }}</a>
+                        {% endif %}
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </li>
               </ul>
             </nav>
           </div>
