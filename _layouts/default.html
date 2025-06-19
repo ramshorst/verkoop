@@ -182,27 +182,22 @@
       });
     };
 
-    // Get user's country via geolocation
+    // Get user's country based on page language
     function getUserCountry() {
-      if ('geolocation' in navigator) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-          fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&localityLanguage=en`)
-            .then(response => response.json())
-            .then(data => {
-              window.userCountry = data.countryCode || 'unknown';
-              gtag('config', 'G-VNF9LJMTB1', {
-                'custom_parameter_1': window.userCountry
-              });
-            })
-            .catch(() => {
-              window.userCountry = 'unknown';
-            });
-        }, function() {
-          window.userCountry = 'unknown';
-        });
-      } else {
-        window.userCountry = 'unknown';
-      }
+      const pageLanguage = '{{ page.lang }}';
+      const languageToCountry = {
+        'en': 'US',
+        'fr': 'FR', 
+        'de': 'DE',
+        'it': 'IT',
+        'nl': 'NL'
+      };
+      
+      window.userCountry = languageToCountry[pageLanguage] || 'unknown';
+      
+      gtag('config', 'G-VNF9LJMTB1', {
+        'custom_parameter_1': window.userCountry
+      });
     }
 
     // Initialize country detection
