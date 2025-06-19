@@ -112,6 +112,10 @@ p {
   margin-bottom: var(--space-md);
 }
 
+ul {
+  padding-left: 20px;
+}
+
 a {
   color: var(--primary);
   text-decoration: none;
