@@ -220,76 +220,88 @@
         <div class="top-navigation">
           <div class="navigation-container">
             <nav class="main-nav">
-              {% if page.lang == site.default_lang %}
-                {% capture homepage_url %}/{% endcapture %}
-              {% else %}
-                {% capture homepage_url %}/{{ page.lang }}/{% endcapture %}
-              {% endif %}
-              <ul class="nav-list">
-                <li class="nav-item {% if page.url == homepage_url %}active{% endif %}">
-                  {% if page.lang == site.default_lang %}
-                    <a href="{{ site.baseurl }}/" class="nav-link">
-                  {% else %}
-                    <a href="{{ site.baseurl }}/{{ page.lang }}/" class="nav-link">
-                  {% endif %}
-                    {% if page.lang == 'en' %}Home
-                    {% elsif page.lang == 'fr' %}Accueil
-                    {% elsif page.lang == 'de' %}Startseite
-                    {% elsif page.lang == 'it' %}Home
-                    {% elsif page.lang == 'nl' %}Home
+              <!-- Mobile menu button -->
+              <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+
+              <!-- Full-screen mobile menu -->
+              <div class="mobile-menu" id="mobile-menu">
+                <div class="mobile-menu-content">
+                  <!-- Close button -->
+                  <button class="mobile-menu-close" id="mobile-menu-close">&times;</button>
+                  
+                  <!-- Menu items -->
+                  <div class="mobile-menu-items">
+                    {% if page.lang == site.default_lang %}
+                      {% capture homepage_url %}/{% endcapture %}
+                    {% else %}
+                      {% capture homepage_url %}/{{ page.lang }}/{% endcapture %}
                     {% endif %}
-                  </a>
-                </li>
-                <li class="nav-item {% if page.url contains 'gallery' %}active{% endif %}">
-                  {% if page.lang == site.default_lang %}
-                    <a href="{{ site.baseurl }}/gallery" class="nav-link">
-                  {% else %}
-                    <a href="{{ site.baseurl }}/{{ page.lang }}/gallery" class="nav-link">
-                  {% endif %}
-                    {% if page.lang == 'en' %}Gallery
-                    {% elsif page.lang == 'fr' %}Galerie
-                    {% elsif page.lang == 'de' %}Galerie
-                    {% elsif page.lang == 'it' %}Galleria
-                    {% elsif page.lang == 'nl' %}Galerij
-                    {% endif %}
-                  </a>
-                </li>
-                <li class="nav-item {% if page.url contains 'plans' %}active{% endif %}">
-                  {% if page.lang == site.default_lang %}
-                    <a href="{{ site.baseurl }}/plans" class="nav-link">
-                  {% else %}
-                    <a href="{{ site.baseurl }}/{{ page.lang }}/plans" class="nav-link">
-                  {% endif %}
-                    {% if page.lang == 'en' %}Plans
-                    {% elsif page.lang == 'fr' %}Plans
-                    {% elsif page.lang == 'de' %}Pläne
-                    {% elsif page.lang == 'it' %}Planimetrie
-                    {% elsif page.lang == 'nl' %}Plattegronden
-                    {% endif %}
-                  </a>
-                </li>
-                <li class="nav-item {% if page.url contains 'faq' %}active{% endif %}">
-                  {% if page.lang == site.default_lang %}
-                    <a href="{{ site.baseurl }}/faq" class="nav-link">FAQ</a>
-                  {% else %}
-                    <a href="{{ site.baseurl }}/{{ page.lang }}/{% if page.lang == 'en' %}faq{% else %}faq/{% endif %}" class="nav-link">FAQ</a>
-                  {% endif %}
-                </li>
-                <li class="nav-item {% if page.url contains 'contact' %}active{% endif %}">
-                  {% if page.lang == site.default_lang %}
-                    <a href="{{ site.baseurl }}/contact" class="nav-link">
-                  {% else %}
-                    <a href="{{ site.baseurl }}/{{ page.lang }}/{% if page.lang == 'en' %}contact{% else %}contact/{% endif %}" class="nav-link">
-                  {% endif %}
-                    {% if page.lang == 'en' %}Contact
-                    {% elsif page.lang == 'fr' %}Contact
-                    {% elsif page.lang == 'de' %}Kontakt
-                    {% elsif page.lang == 'it' %}Contatto
-                    {% elsif page.lang == 'nl' %}Contact
-                    {% endif %}
-                  </a>
-                </li>
-              </ul>
+                    
+                    <a href="{% if page.lang == site.default_lang %}{{ site.baseurl }}/{% else %}{{ site.baseurl }}/{{ page.lang }}/{% endif %}" class="mobile-menu-item {% if page.url == homepage_url %}active{% endif %}">
+                      {% if page.lang == 'en' %}Home
+                      {% elsif page.lang == 'fr' %}Accueil
+                      {% elsif page.lang == 'de' %}Startseite
+                      {% elsif page.lang == 'it' %}Home
+                      {% elsif page.lang == 'nl' %}Home
+                      {% endif %}
+                    </a>
+                    
+                    <a href="{% if page.lang == site.default_lang %}{{ site.baseurl }}/gallery{% else %}{{ site.baseurl }}/{{ page.lang }}/gallery{% endif %}" class="mobile-menu-item {% if page.url contains 'gallery' %}active{% endif %}">
+                      {% if page.lang == 'en' %}Gallery
+                      {% elsif page.lang == 'fr' %}Galerie
+                      {% elsif page.lang == 'de' %}Galerie
+                      {% elsif page.lang == 'it' %}Galleria
+                      {% elsif page.lang == 'nl' %}Galerij
+                      {% endif %}
+                    </a>
+                    
+                    <a href="{% if page.lang == site.default_lang %}{{ site.baseurl }}/plans{% else %}{{ site.baseurl }}/{{ page.lang }}/plans{% endif %}" class="mobile-menu-item {% if page.url contains 'plans' %}active{% endif %}">
+                      {% if page.lang == 'en' %}Plans
+                      {% elsif page.lang == 'fr' %}Plans
+                      {% elsif page.lang == 'de' %}Pläne
+                      {% elsif page.lang == 'it' %}Planimetrie
+                      {% elsif page.lang == 'nl' %}Plattegronden
+                      {% endif %}
+                    </a>
+                    
+                    <a href="{% if page.lang == site.default_lang %}{{ site.baseurl }}/faq{% else %}{{ site.baseurl }}/{{ page.lang }}/{% if page.lang == 'en' %}faq{% else %}faq/{% endif %}{% endif %}" class="mobile-menu-item {% if page.url contains 'faq' %}active{% endif %}">FAQ</a>
+                    
+                    <a href="{% if page.lang == site.default_lang %}{{ site.baseurl }}/contact{% else %}{{ site.baseurl }}/{{ page.lang }}/{% if page.lang == 'en' %}contact{% else %}contact/{% endif %}{% endif %}" class="mobile-menu-item {% if page.url contains 'contact' %}active{% endif %}">
+                      {% if page.lang == 'en' %}Contact
+                      {% elsif page.lang == 'fr' %}Contact
+                      {% elsif page.lang == 'de' %}Kontakt
+                      {% elsif page.lang == 'it' %}Contatto
+                      {% elsif page.lang == 'nl' %}Contact
+                      {% endif %}
+                    </a>
+                  </div>
+                  
+                  <!-- Language selector -->
+                  <div class="mobile-menu-languages">
+                    <div class="mobile-language-label">
+                      {% if page.lang == 'en' %}Language
+                      {% elsif page.lang == 'fr' %}Langue
+                      {% elsif page.lang == 'de' %}Sprache
+                      {% elsif page.lang == 'it' %}Lingua
+                      {% elsif page.lang == 'nl' %}Taal
+                      {% endif %}
+                    </div>
+                    <div class="mobile-language-options">
+                      {% for lang in site.languages %}
+                        {% if lang == page.lang %}
+                          <span class="mobile-language-current">{{ lang | upcase }}</span>
+                        {% else %}
+                          <a href="{% if lang == site.default_lang %}{{ site.baseurl }}/{% else %}{{ site.baseurl }}/{{ lang }}/{% endif %}" class="mobile-language-option">{{ lang | upcase }}</a>
+                        {% endif %}
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </nav>
           </div>
 
@@ -571,6 +583,48 @@
   <!-- Scripts -->
   <script src="{{ site.baseurl }}/js/gallery.js"></script>
   <script>
+    // Simple mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const closeBtn = document.getElementById('mobile-menu-close');
+      const body = document.body;
+      
+      if (menuBtn && mobileMenu && closeBtn) {
+        // Open menu
+        menuBtn.addEventListener('click', function() {
+          mobileMenu.classList.add('show');
+          menuBtn.classList.add('active');
+          body.style.overflow = 'hidden';
+        });
+        
+        // Close menu with close button
+        closeBtn.addEventListener('click', function() {
+          mobileMenu.classList.remove('show');
+          menuBtn.classList.remove('active');
+          body.style.overflow = '';
+        });
+        
+        // Close menu when clicking menu items
+        const menuItems = mobileMenu.querySelectorAll('.mobile-menu-item, .mobile-language-option');
+        menuItems.forEach(item => {
+          item.addEventListener('click', function() {
+            mobileMenu.classList.remove('show');
+            menuBtn.classList.remove('active');
+            body.style.overflow = '';
+          });
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && mobileMenu.classList.contains('show')) {
+            mobileMenu.classList.remove('show');
+            menuBtn.classList.remove('active');
+            body.style.overflow = '';
+          }
+        });
+      }
+    });
 
     // Enhanced engagement tracking and popup system
     (function() {
