@@ -7,7 +7,8 @@
       "Bash(for i in {1..70}; do touch \"assets/images/photo$i.jpg\"; done)",
       "Bash(git add:*)",
       "Bash(ls:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(git commit:*)"
     ],
     "deny": []
   }

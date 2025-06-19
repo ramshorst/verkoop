@@ -3,33 +3,69 @@ layout: page
 lang: nl
 ---
 
-#### Groot en uniek domein
+19e-eeuws herenhuis van 675 m² woonoppervlak op een landgoed van 1.750 m², gelegen in een eeuwenoud park van 4.600 m². Monumentale orangerie, 7 schouwen, 3 luxe badkamers, semi-professionele keuken, privé-appartement, glasvezel en bevestigd potentieel voor horeca, evenementen en gastronomie.
 
-Domaine de l'Amiral is, met een oppervlakte van 1750m2, waarvan 675m2 woonoppervlakte, een groot en imposant domein. Ergens in de 19e eeuw is het gebruikt als zijderupskwekerij. Deze functie is bepalend voor de unieke en indrukwekkende architectuur van het gebouw. Het logboek uit de 1837 getuigt van de diverse activiteiten die er in dit huis hebben plaatsgevonden door de eeuwen heen.
+## Overzicht
 
-Rond 1900 werd het park van 4600 m2 aangelegd met 25 ceders. Tegenwoordig zijn deze honderdjarige ceders tot wel 40 meter hoog. Naast deze prachtige oude bomen heeft het park een groot bamboebos van zo'n 200 m2, een grote moestuin, een fontein en een ruim terras.
+| **Woonoppervlak**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 675 m² |
+| **Bebouwde oppervlak** | 1.750 m² |
+| **Landschapspark** | 4.600 m² |
+| **Oorsprong** | 19e-eeuwse zijderupskwekerij – omgetoverd tot herenhuis rond 1900 |
+| **Verbinding** | Snelle glasvezel |
 
-In dezelfde tijd als het park is ook het huis gerenoveerd tot een statige herenboerderij. Bij binnenkomst wacht je een imposante orangerie met een 10 meter hoog plafond en natuurstenen pilaren waar grote kruisgewelven op rusten. In deze ruimte valt uw oog direct op het curiositeitenkabinet dat blijft verwonderen. De orangerie is voor een deel in de rots gebouwd hierdoor blijft het hier ook in de zomer lekker koel. Het huis met haar karakteristieke elementen en charmante inrichting, blijft verrassen. 
-Een trappenhuis met een luie natuurstenen bordestrap, zeven schouwen, drie ruime badkamers met inloop douches, gietijzeren baden en marmeren wastafels. In het hart van het huis de Grand Salon, een huiselijke en charmante ruimte voor feestelijke diners met sierlijke ornamenten, houten lambrisering en een klassieke houten parketvloer.
+## Kroniek & Architectuur
 
-Het huis is voorzien van eigentijdse elementen zoals een thuisbioscoop en een beschut dakterras op het zuiden. Via de hoge klassieke glazen pui met openslaande deuren van het dakterras kom je in een modern privé appartement. Verder is het huis voorzien van een semi professionele keuken, vier grote gewelfkelders, een bron en een wijnpers. 
+- **1837 – Oorspronkelijke zijderupskwekerij**: massieve structuur ontworpen voor zijderupsteelt, vandaar de uitzonderlijke volumes.
+- **1900 – Wedergeboorte als herenhuis**: toevoeging van spectaculaire orangerie (10 m hoog met gewelfde plafonds), lambriseringen, Hongaarse punt parket en Grand Salon voor recepties.
+- **Curiositeitenkabinet**: kenmerkende ruimte die de geschiedenis van de plek voortzet en bezoekers onmiddellijk betovert.
 
-In en rondom het huis is er goed mobiel bereik. Het huis beschikt verder over een moderne glasvezel aansluiting en heeft hierdoor een snel en stabiel wifi netwerk. 
+## Bosrijk park
 
-**Extra grond**
-Eventueel is er, in overleg, meer grond te koop inclusief ruimte om met meer dan 25 auto’s te parkeren.
+- **25 eeuwenoude ceders** (tot 40 m).
+- **Bamboebos** ~ 200 m² dat een natuurlijk scherm vormt.
+- **Moestuin, fontein, groot terras** op het zuiden.
+- **Mogelijkheden**: tenten, buitenceremoniën, permacultuur tuin.
 
-**Omgeving**
-In het dorp heb je veel voorzieningen zoals: twee basisscholen, twee bakkers,een slager, landwinkel, biowinkel, restaurant, kapper, buurtsuper, tennisbaan, mountainbike, wandel- en fietsroutes en een wielrencol, ...
+## Opmerkelijke interieurs
 
-Binnen tien minuten rijden vind je ook een middelbare school, twee grote supermarkten, twee tankstations, een professionele bouwmarkt, apotheek, twee bijzondere zwemplekjes met strand en rotsen, ...
-Valence, een grote stad die van alle gemakken is voorzien ligt op ongeveer twintig minuten rijden. Vanaf het TGV station in valence reis je in 2:15 uur naar Parijs. 
+- **Orangerie**: stenen pilaren, kruisgewelven, natuurlijke koelte (tegen de rots gebouwd).
+- **Grand Salon**: gebeeldhouwde ornamenten, lambriseringen, historisch parket.
+- **7 functionele schouwen**.
+- **3 badkamers**: Italiaanse douches, gietijzeren baden, marmeren wastafels.
+- **"Luie" stenen trap**: zachte helling, vloeiende circulatie.
+- **Modern privé-appartement** uitkomend op **beschut dakterras**, zuidgerichte.
+- **Semi-professionele keuken**, **4 gewelfde kelders**, **waterput** en **wijnpers**.
 
-**Potentieel**
-**Tourisme** - Domaine de l’Amiral ligt in het toeristische gebied van de Drôme Ardèche. Het ligt zeer dichtbij twee populaire fietsroutes: de De Dolce Via en de ViaRhôna. Gelegen op ongeveer een kwartier rijden van de de Route du Soleil (A7) is Domaine ook een populaire stopplek voor mensen die op doorreis zijn. 
+## Comfort & connectiviteit
 
-**Bruiloften en evenementen** - Het huis leent zich met zijn spectaculaire binnenruimtes, vele kamers en indrukwekkende park perfect voor het organiseren van bruiloften, evenementen en feesten in alle seizoenen.
+- Glasvezel.
+- Geïntegreerde thuisbioscoop.
+- Gemengde verwarming (details op aanvraag).
+- Bereikbaarheid: A7 (Route du Soleil) 15 min weg, Valence TGV 20 min weg (Parijs: 2u 15).
 
-**Lange termijn verhuur** - Er is ook mogelijkheid voor het vast verhuren van kamers voor een stabiel basisinkomen à 300€ per maand per kamer.
+## Dorpsleven
 
-**Groot restaurant** - De imposante Orangerie, en het terras in het indrukwekkende park zijn zeer geschikt om vele tafeltjes te herbergen. Ook is er ruimte om de keuken uit te breiden. En voor nog meer zitruimte zou het mogelijk zijn om de muren tussen de omloop en de Orangerie te verwijderen. Op deze manier krijgt de Orangerie er een heel groot balkon bij.
+- **Lopend bereikbaar**: basisscholen, bakkerijen, slager, biologische winkel, restaurant, tennisbanen, mountainbike- & wandelpaden.
+- **< 10 min**: middelbare school, supermarkten, tankstations, apotheek, professionele materialen, twee natuurlijke zwemplekken.
+- **Groot stedelijk centrum**: Valence (alle voorzieningen) 20 min weg.
+
+## Ontwikkelingsgebieden
+
+### Toerisme
+
+- Hart van het Drôme-Ardèche gebied, dicht bij de **Dolce Via** en **ViaRhôna**.
+- Favoriete tussenstop voor A7-vakantiegangers.
+
+### Bruiloften & evenementen
+
+- Spectaculaire binnenvolumes, majestueus park: vier-seizoenen capaciteit.
+- Aparte zones voor ceremonies, cocktails en accommodatie.
+
+### Gastronomie
+
+- **Orangerie** + **terras** = unieke receptiezaal.
+- Uitbreidbare keuken; mogelijkheid om de galerij te openen voor een panoramische mezzanine.
+
+## Samenvatting
+
+Domaine de l'Amiral combineert historisch karakter, hedendaagse voorzieningen en sterk commercieel potentieel. Een zeldzaam bezit, klaar om prestigieuze woonprojecten of grootschalige professionele activiteiten te huisvesten.
