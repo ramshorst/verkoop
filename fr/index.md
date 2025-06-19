@@ -3,31 +3,91 @@ layout: page
 lang: fr
 ---
 
-Domaine de l'Amiral, avec une superficie de 1750m2, dont 675m2 d'espace habitable, est un domaine vaste et imposant. Au XIXe siècle, il a été utilisé comme magnanerie. Cette fonction a déterminé l'architecture unique et impressionnante du bâtiment. Le journal de bord de 1837 atteste des diverses activités qui ont eu lieu dans cette maison au cours des siècles.
+Manoir du XIXᵉ siècle de 675 m² habitables sur un domaine de 1 750 m², posé dans un parc centenaire de 4 600 m². Orangerie monumentale, 7 cheminées, 3 salles de bains haut de gamme, cuisine semi-pro, appartement privé, fibre optique, et un potentiel confirmé pour l’hôtellerie, les événements et la restauration gastronomique.
 
-Vers 1900, le parc de 4600 m2 a été aménagé avec 25 cèdres. Aujourd'hui, ces cèdres centenaires atteignent jusqu'à 40 mètres de haut. Outre ces beaux arbres anciens, le parc possède une grande forêt de bambous d'environ 200 m2, un grand potager, une fontaine et une spacieuse terrasse.
+---
 
-À peu près à la même époque que le parc, la maison a été rénovée en un manoir majestueux. En entrant, une imposante orangerie vous attend avec un plafond de 10 mètres de haut et des piliers en pierre sur lesquels reposent de grandes voûtes croisées. Dans cette pièce, votre regard est immédiatement attiré par le cabinet de curiosités qui continue d'étonner. L'orangerie est en partie construite dans la roche afin qu'elle reste agréablement fraîche même en été. La maison avec ses éléments caractéristiques et son intérieur charmant continue de surprendre.   
-Un escalier en pierre paresseux, sept cheminées, trois spacieuses salles de bain avec douches à l'italienne, baignoires en fonte et lavabos en marbre. Au cœur de la maison se trouve le Grand Salon, un espace convivial et charmant pour des dîners festifs avec des ornements ornés, des boiseries et un parquet classique en bois.
+# Domaine de l’Amiral
 
-La maison est équipée d'éléments contemporains tels qu'un home cinéma et une terrasse de toit abritée orientée au sud. À travers les hautes fenêtres en acier de la terrasse du toit, vous entrez dans un appartement privé moderne. En outre, la maison est équipée d'une cuisine semi-professionnelle, de quatre grandes caves voûtées, d'un puits et d'un pressoir à vin.   
-  
-Dans et autour de la maison, il y a une bonne couverture mobile. La maison dispose également d'une connexion fibre moderne et dispose donc d'un réseau wifi rapide et stable.   
-  
-**Terrain supplémentaire**
-Éventuellement, en concertation, plus de terrain à vendre y compris l'espace pour garer plus de 25 voitures.
+_Manoir monumental – Drôme | Ardèche_
 
-**Environnement**  
-Dans le village, vous disposez de nombreux équipements tels que : deux écoles primaires, deux boulangeries, une boucherie, une boutique de ferme, une boutique bio, un restaurant, un coiffeur, un supermarché local, un court de tennis, des itinéraires de VTT, de randonnée et de cyclisme et un col pour les cyclistes ...
+## 1. Vue d’ensemble
 
-À moins de dix minutes en voiture, vous trouverez également un lycée, deux grands supermarchés, deux stations-service, un marché professionnel de la construction, une pharmacie, deux spots de baignade exceptionnels avec plage et rochers, ...  
-Valence, une grande ville avec toutes les commodités, se trouve à environ vingt minutes en voiture. De la gare TGV de Valence, vous pouvez vous rendre à Paris en 2h15.   
-  
-**Potentiel**  
-**Tourisme** - Le Domaine de l'Amiral est situé dans la zone touristique de la Drôme Ardèche. Il est très proche de deux itinéraires cyclables populaires : la Dolce Via et la ViaRhôna. Situé à environ quinze minutes de la Route du Soleil (A7), le Domaine est également une étape populaire pour les personnes de passage.   
-  
-**Mariages et événements** - Avec ses espaces intérieurs spectaculaires, ses nombreuses pièces et son parc impressionnant, la maison se prête parfaitement à l'organisation de mariages, d'événements et de fêtes en toutes saisons.
+|                       |                                                      |
+| --------------------- | ---------------------------------------------------- |
+| **Surface habitable** | 675 m²                                               |
+| **Surface bâtie**     | 1 750 m²                                             |
+| **Parc paysager**     | 4 600 m²                                             |
+| **Origine**           | Magnanerie du XIXᵉ – transformée en manoir vers 1900 |
+| **Connexion**         | Fibre optique très haut débit                        |
 
-**Location à long terme** - Il existe également la possibilité de louer des chambres en permanence pour un revenu de base stable de 300 € par mois par chambre.
+---
 
-**Grand restaurant** - L'imposante Orangerie et la terrasse dans le parc impressionnant sont très adaptées pour accueillir de nombreuses tables. Il y a également de la place pour agrandir la cuisine. Et pour encore plus d'espace d'assise, il serait possible de retirer les murs entre la galerie et l'Orangerie. Cela donnerait à l'Orangerie un très grand balcon.
+## 2. Chronique & Architecture
+
+- **1837 – Magnanerie d’origine** : structure massive conçue pour l’élevage du ver à soie, d’où ses volumes exceptionnels.
+- **1900 – Renaissance en manoir** : ajout d’une orangerie spectaculaire (10 m de hauteur sous voûtes), boiseries, parquet point de Hongrie et Grand Salon pour réceptions.
+- **Cabinet de curiosités** : pièce signature qui prolonge l’histoire des lieux et séduit immédiatement les visiteurs.
+
+---
+
+## 3. Parc arboré
+
+- **25 cèdres centenaires** (jusqu’à 40 m).
+- **Forêt de bambous** ~ 200 m² créant un écran naturel.
+- **Potager, fontaine, grande terrasse** plein Sud.
+- **Possibilités** : chapiteaux, cérémonies extérieures, potager en permaculture.
+
+---
+
+## 4. Intérieurs remarquables
+
+- **Orangerie** : piliers de pierre, voûtes d’arêtes, fraîcheur naturelle (adossée au rocher).
+- **Grand Salon** : ornements sculptés, boiseries, parquet d’époque.
+- **7 cheminées** fonctionnelles.
+- **3 salles de bains** : douches à l’italienne, baignoires en fonte, vasques en marbre.
+- **Escalier en pierre “paresseux”** : rampe douce, circulation fluide.
+- **Appartement privé** moderne ouvrant sur **toit-terrasse** abrité, exposition Sud.
+- **Cuisine semi-professionnelle**, **4 caves voûtées**, **puits** et **pressoir à vin**.
+
+---
+
+## 5. Confort & connectivité
+
+- Fibre optique > 1 Gb/s.
+- Home-cinéma intégré.
+- Chauffage mixte (détails sur demande).
+- Accessibilité : A7 (Route du Soleil) à 15 min, Valence TGV à 20 min (Paris : 2 h 15).
+
+---
+
+## 6. Vie de village
+
+- **À pied** : écoles primaires, boulangeries, boucherie, épicerie bio, restaurant, courts de tennis, sentiers VTT & rando.
+- **< 10 min** : lycée, grandes surfaces, stations-service, pharmacie, matériaux pro, deux spots de baignade naturels.
+- **Grand pôle urbain** : Valence (toutes commodités) à 20 min.
+
+---
+
+## 7. Axes de développement
+
+### Tourisme
+
+- Cœur du territoire Drôme-Ardèche, proche de la **Dolce Via** et de la **ViaRhôna**.
+- Étape privilégiée pour les vacanciers de l’A7.
+
+### Mariages & événements
+
+- Volumes intérieurs spectaculaires, parc majestueux : capacité quatre-saisons.
+- Zones distinctes pour cérémonies, cocktail et hébergement.
+
+### Restauration gastronomique
+
+- **Orangerie** + **terrasse** = salle de réception unique.
+- Cuisine extensible ; possibilité d’ouvrir la galerie pour créer une mezzanine panoramique.
+
+---
+
+## 8. En résumé
+
+Le Domaine de l’Amiral marie cachet historique, équipements contemporains et fort potentiel commercial. Un actif rare, prêt à accueillir projets résidentiels de prestige ou activités professionnelles d’envergure.
