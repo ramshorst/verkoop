@@ -7,6 +7,36 @@
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.data.translations.site_title[page.lang] }}{% endif %}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
   
+  <!-- Block all indexing -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="slurp" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="duckduckbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="baiduspider" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="yandexbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="facebookexternalhit" content="noindex, nofollow">
+  <meta name="twitterbot" content="noindex, nofollow">
+  <meta name="linkedinbot" content="noindex, nofollow">
+  <meta name="whatsapp" content="noindex, nofollow">
+  <meta name="applebot" content="noindex, nofollow">
+  
+  <!-- Block AI crawlers -->
+  <meta name="gptbot" content="noindex, nofollow">
+  <meta name="chatgpt-user" content="noindex, nofollow">
+  <meta name="ccbot" content="noindex, nofollow">
+  <meta name="anthropic-ai" content="noindex, nofollow">
+  <meta name="claude-web" content="noindex, nofollow">
+  <meta name="perplexitybot" content="noindex, nofollow">
+  <meta name="youbot" content="noindex, nofollow">
+  <meta name="claude-bot" content="noindex, nofollow">
+  
+  <!-- Block archiving -->
+  <meta name="archive" content="noindex, nofollow">
+  <meta name="wayback" content="noindex, nofollow">
+  <meta name="ia_archiver" content="noindex, nofollow">
+  <meta name="archive.org_bot" content="noindex, nofollow">
+  
   <!-- Open Graph and Twitter Card tags -->
   <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.data.translations.site_title[page.lang] }}{% endif %}">
   {% if page.lang == 'en' %}
