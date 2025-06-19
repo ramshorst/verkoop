@@ -325,6 +325,29 @@ img {
   border-radius: var(--radius-full);
 }
 
+/* Mobile menu overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+.mobile-menu-overlay.show {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+
 .hamburger {
   display: none;
   background: none;
@@ -336,10 +359,16 @@ img {
 .hamburger span {
   display: block;
   width: 24px;
-  height: 2px;
+  height: 3px;
   background-color: var(--primary);
-  margin: 5px 0;
-  transition: all 0.3s ease;
+  margin: 4px 0;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 2px;
+  transform-origin: center;
+}
+
+.hamburger.active span {
+  background-color: var(--primary);
 }
 
 /* Featured section */
@@ -994,24 +1023,25 @@ img {
   .nav-list {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100vw;
+    right: 0;
+    width: 85vw;
+    max-width: 320px;
     height: 100vh;
     height: 100dvh; /* Use dynamic viewport height */
-    background-color: var(--background);
+    background: linear-gradient(135deg, var(--background) 0%, var(--gray-100) 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: stretch;
     z-index: 1000;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-    box-shadow: var(--shadow-xl);
-    padding: 80px var(--space-lg) var(--space-lg);
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    padding: 100px var(--space-xl) var(--space-xl);
     margin: 0;
     list-style: none;
     overflow-y: auto;
-    gap: var(--space-sm);
+    backdrop-filter: blur(10px);
   }
 
   .nav-list.show {
@@ -1019,105 +1049,126 @@ img {
   }
 
   .nav-item {
-    width: auto;
-    text-align: center;
-    margin: 0;
+    width: 100%;
+    margin: 0 0 var(--space-sm) 0;
     opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.3s ease;
+    transform: translateX(30px);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .nav-list.show .nav-item {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 
   .nav-list.show .nav-item:nth-child(1) {
     transition-delay: 0.1s;
   }
   .nav-list.show .nav-item:nth-child(2) {
-    transition-delay: 0.2s;
+    transition-delay: 0.15s;
   }
   .nav-list.show .nav-item:nth-child(3) {
-    transition-delay: 0.3s;
+    transition-delay: 0.2s;
   }
   .nav-list.show .nav-item:nth-child(4) {
-    transition-delay: 0.4s;
+    transition-delay: 0.25s;
   }
   .nav-list.show .nav-item:nth-child(5) {
-    transition-delay: 0.5s;
+    transition-delay: 0.3s;
   }
   .nav-list.show .nav-item:nth-child(6) {
-    transition-delay: 0.6s;
+    transition-delay: 0.35s;
   }
 
   .nav-link {
-    padding: var(--space-lg) var(--space-xl);
-    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    padding: var(--space-md);
+    font-size: 1.1rem;
     font-weight: 600;
     border-radius: var(--radius-lg);
     transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--primary);
+    text-decoration: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   }
 
   .nav-link:hover {
-    background-color: var(--gray-100);
-    transform: scale(1.05);
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(14, 36, 90, 0.15);
+  }
+
+  .nav-item.active .nav-link {
+    background: var(--primary);
+    color: white;
   }
 
   .nav-item:nth-child(5) .nav-link {
-    background-color: var(--secondary);
+    background: var(--secondary);
     color: white;
-    margin: var(--space-md) 0;
-    padding: var(--space-md) var(--space-xl);
+    margin-top: var(--space-md);
   }
 
   .nav-item:nth-child(5) .nav-link:hover {
-    background-color: #001c99;
-    transform: scale(1.05);
+    background: #001c99;
+    transform: translateY(-2px);
   }
 
   /* Mobile language selector */
   .mobile-language-selector {
-    border-top: 1px solid var(--gray-200);
-    padding-top: var(--space-md);
-    margin-top: var(--space-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: var(--space-lg);
+    margin-top: var(--space-lg);
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
   }
 
   .language-label {
     color: var(--gray-600);
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: var(--space-sm);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
     pointer-events: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
   }
 
   .mobile-language-list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
     gap: var(--space-sm);
-    justify-content: center;
-    flex-wrap: wrap;
   }
 
   .mobile-language-link {
-    padding: var(--space-sm) var(--space-md);
-    background: var(--gray-100);
-    color: var(--gray-700);
+    padding: var(--space-sm);
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--primary);
     text-decoration: none;
     border-radius: var(--radius-md);
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: all 0.2s ease;
-    border: 2px solid transparent;
+    font-size: 0.875rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    text-align: center;
+    backdrop-filter: blur(5px);
   }
 
   .mobile-language-link:hover {
     background: var(--primary);
     color: white;
     transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(14, 36, 90, 0.2);
   }
 
   /* Hide desktop language selector on mobile */
-  .language-selector {
+  .top-navigation .language-selector {
     display: none;
   }
 

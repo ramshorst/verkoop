@@ -220,6 +220,7 @@
         <div class="top-navigation">
           <div class="navigation-container">
             <nav class="main-nav">
+              <div class="mobile-menu-overlay" id="mobile-overlay"></div>
               <button class="hamburger" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
                 <span></span>
                 <span></span>
@@ -603,9 +604,10 @@
     document.addEventListener('DOMContentLoaded', function() {
       const navToggle = document.getElementById('nav-toggle');
       const navMenu = document.getElementById('nav-menu');
+      const mobileOverlay = document.getElementById('mobile-overlay');
       const body = document.body;
       
-      if (navToggle && navMenu) {
+      if (navToggle && navMenu && mobileOverlay) {
         navToggle.addEventListener('click', function() {
           const isOpen = navMenu.classList.contains('show');
           
@@ -616,8 +618,11 @@
           }
         });
         
+        // Close menu when clicking overlay
+        mobileOverlay.addEventListener('click', closeMenu);
+        
         // Close menu when clicking on nav links
-        const navLinks = navMenu.querySelectorAll('.nav-link');
+        const navLinks = navMenu.querySelectorAll('.nav-link, .mobile-language-link');
         navLinks.forEach(link => {
           link.addEventListener('click', closeMenu);
         });
@@ -631,28 +636,34 @@
         
         function openMenu() {
           navMenu.classList.add('show');
+          mobileOverlay.classList.add('show');
           body.style.overflow = 'hidden';
           navToggle.setAttribute('aria-expanded', 'true');
+          navToggle.classList.add('active');
           
-          // Change hamburger to X
+          // Change hamburger to X with smoother animation
           const spans = navToggle.querySelectorAll('span');
           if (spans.length === 3) {
-            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
             spans[1].style.opacity = '0';
-            spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+            spans[1].style.transform = 'scale(0)';
+            spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
           }
         }
         
         function closeMenu() {
           navMenu.classList.remove('show');
+          mobileOverlay.classList.remove('show');
           body.style.overflow = '';
           navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.classList.remove('active');
           
           // Reset hamburger
           const spans = navToggle.querySelectorAll('span');
           if (spans.length === 3) {
             spans[0].style.transform = '';
             spans[1].style.opacity = '1';
+            spans[1].style.transform = '';
             spans[2].style.transform = '';
           }
         }
