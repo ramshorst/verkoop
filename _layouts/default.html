@@ -233,6 +233,63 @@
         <div class="top-navigation">
           <div class="navigation-container">
             <nav class="main-nav">
+              <!-- Desktop navigation menu -->
+              <ul class="nav-list">
+                {% if page.lang == site.default_lang %}
+                  {% capture homepage_url %}/{% endcapture %}
+                {% else %}
+                  {% capture homepage_url %}/{{ page.lang }}/{% endcapture %}
+                {% endif %}
+                
+                <li class="nav-item {% if page.url == homepage_url %}active{% endif %}">
+                  <a href="{% if page.lang == site.default_lang %}{{ site.baseurl }}/{% else %}{{ site.baseurl }}/{{ page.lang }}/{% endif %}" class="nav-link">
+                    {% if page.lang == 'en' %}Home
+                    {% elsif page.lang == 'fr' %}Accueil
+                    {% elsif page.lang == 'de' %}Startseite
+                    {% elsif page.lang == 'it' %}Home
+                    {% elsif page.lang == 'nl' %}Home
+                    {% endif %}
+                  </a>
+                </li>
+                
+                <li class="nav-item {% if page.url contains 'gallery' %}active{% endif %}">
+                  <a href="{% if page.lang == site.default_lang %}{{ site.baseurl }}/gallery{% else %}{{ site.baseurl }}/{{ page.lang }}/gallery{% endif %}" class="nav-link">
+                    {% if page.lang == 'en' %}Gallery
+                    {% elsif page.lang == 'fr' %}Galerie
+                    {% elsif page.lang == 'de' %}Galerie
+                    {% elsif page.lang == 'it' %}Galleria
+                    {% elsif page.lang == 'nl' %}Galerij
+                    {% endif %}
+                  </a>
+                </li>
+                
+                <li class="nav-item {% if page.url contains 'plans' %}active{% endif %}">
+                  <a href="{% if page.lang == site.default_lang %}{{ site.baseurl }}/plans{% else %}{{ site.baseurl }}/{{ page.lang }}/plans{% endif %}" class="nav-link">
+                    {% if page.lang == 'en' %}Plans
+                    {% elsif page.lang == 'fr' %}Plans
+                    {% elsif page.lang == 'de' %}Pläne
+                    {% elsif page.lang == 'it' %}Planimetrie
+                    {% elsif page.lang == 'nl' %}Plattegronden
+                    {% endif %}
+                  </a>
+                </li>
+                
+                <li class="nav-item {% if page.url contains 'faq' %}active{% endif %}">
+                  <a href="{% if page.lang == site.default_lang %}{{ site.baseurl }}/faq{% else %}{{ site.baseurl }}/{{ page.lang }}/{% if page.lang == 'en' %}faq{% else %}faq/{% endif %}{% endif %}" class="nav-link">FAQ</a>
+                </li>
+                
+                <li class="nav-item {% if page.url contains 'contact' %}active{% endif %}">
+                  <a href="{% if page.lang == site.default_lang %}{{ site.baseurl }}/contact{% else %}{{ site.baseurl }}/{{ page.lang }}/{% if page.lang == 'en' %}contact{% else %}contact/{% endif %}{% endif %}" class="nav-link">
+                    {% if page.lang == 'en' %}Contact
+                    {% elsif page.lang == 'fr' %}Contact
+                    {% elsif page.lang == 'de' %}Kontakt
+                    {% elsif page.lang == 'it' %}Contatto
+                    {% elsif page.lang == 'nl' %}Contact
+                    {% endif %}
+                  </a>
+                </li>
+              </ul>
+              
               <!-- Mobile menu button -->
               <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
                 <span></span>
